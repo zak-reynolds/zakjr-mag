@@ -1,38 +1,165 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿@media screen and (min-width:1000px) {
+
+    #content {
+        position: relative;
+        left: 0%;
+        transition: left 0.4s ease-in-out;
+
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+    }
+
+    #content.large-push-6 {
+        left: 50%;
+    }
+
+    #mag-cover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vh;
+        height: 100vh;
+        z-index: 100;
+    }
+
+    .cover-img {
+        display: block;
+        width: 33%;
+        height: 100vh;
+        background-size: cover;
+        background-position: 50% 50%;
+        position: fixed;
+        top: 0;
+        transition: left 0.5s ease-in-out, width 0.3s ease-out;
+        cursor: pointer;
+    }
+
+    .cover-img-left {
+        left: 0%;
+        z-index: 100;
+        background-image: url('../images/cover1.jpg');
+    }
+
+    .cover-img-mid {
+        left: 33%;
+        z-index: 101;
+        background-image: url('http://lorempixel.com/800/800/abstract');
+    }
+
+    .cover-img-right {
+        left: 66%;
+        z-index: 102;
+        background-image: url('../images/cover3.jpg');
+    }
+
+    .cover-img.active {
+        z-index: 105;
+        width: 50%;
+        left: 0%;
+        transition: left 0.3s ease-in-out, width 0.3s ease-out;
+    }
+
+    .cover-img.inactive-left {
+        z-index: 100;
+        width: 50%;
+        left: -55%;
+    }
+
+    .cover-img.inactive-right {
+        z-index: 100;
+        width: 50%;
+        left: 105%;
+    }
+
+    .cover-pop {
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        width: 100%;
+        display: block;
+        padding: 20px 20px 40px 20px;
+        opacity: 0;
+        transition: all 0.2s ease-in;
+        right: 15px;
+        text-align: right;
+        background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
+    }
+    .cover-img:hover .cover-pop,
+    .cover-img.active .cover-pop {
+        bottom: 0px;
+        opacity: 1;
+    }
+    .cover-pop h1 {
+        font-size: 5rem !important;
+        display: block;
+        color: #fff;
+        text-shadow: 0px 3px 2px 2px #333;
+    }
+    .cover-pop p {
+        display: block;
+        width: 315px;
+        float: right;
+        color: #fff;
+        text-shadow: 0px 3px 2px #444;
+    }
+
+    .cover-crumbs {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        opacity: 0;
+        background: #eee !important;
+        transition: all 0.3s ease-out;
+        color: #333;
+    }
+    .cover-img.active .cover-crumbs {
+        opacity: 1;
+        transition: all 0.3s ease-in 0.5s;
+        color: #333;
+    }
+    .cover-crumbs .accent {
+        position: absolute;
+        display: block;
+        height: 104%;
+        width: 2rem;
+        background: #eee;
+        top: -1px;
+        left: -2rem;
+        line-height: 2rem;
+        box-shadow: 4px 3px 7px 0px rgba(0,0,0,0);
+        transition: all 0.2s ease-out;
+    }
+    .cover-img.active:hover button .accent {
+        top: -4px;
+        box-shadow: 4px 3px 7px 0px rgba(0,0,0,0.2);
+        background: #fff;
+    }
 }
 
-/* Wrapping element */
-/* Set some basic padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.flex-video {
+    margin-left: -2rem;
+    margin-right: -2rem;
 }
 
-/* Set widths on the form inputs since otherwise they're 100% wide */
-input,
-select,
-textarea {
-    max-width: 280px;
+body {
+    font-family: 'Raleway', sans-serif;
 }
 
-/* Carousel */
-.carousel-caption p {
-    font-size: 20px;
-    line-height: 1.4;
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fjalla One', sans-serif;
+    color: #112;
 }
 
-/* Make .svg files in the carousel display properly in older browsers */
-.carousel-inner .item img[src$=".svg"]
-{
-    width: 100%;
+h1 {
+    text-transform: uppercase;
 }
 
-/* Hide/rearrange for smaller screens */
-@media screen and (max-width: 767px) {
-  /* Hide captions */
-  .carousel-caption {
-    display: none
-  }
+p {
+    color: #333;
+}
+
+.blog-post {
+    font-size: 1.15rem;
+    border-top: 1px solid #ddd;
 }

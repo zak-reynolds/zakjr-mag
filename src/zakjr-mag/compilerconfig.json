@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "wwwroot/lib/foundation-sites/scss/foundation.css",
+    "inputFile": "wwwroot/lib/foundation-sites/scss/foundation.scss"
+  },
+  {
+    "outputFile": "wwwroot/lib/foundation-sites/scss/site.css",
+    "inputFile": "wwwroot/lib/foundation-sites/scss/site.scss"
+  }
+]
