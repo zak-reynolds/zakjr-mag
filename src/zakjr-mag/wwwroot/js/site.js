@@ -18,7 +18,6 @@ $(".cover-img").click(function () {
     }
     // Dectivate image
     else {
-        console.log("!");
         $(".cover-img.active").removeClass("active");
         $(".cover-img.inactive-left").removeClass("inactive-left");
         $(".cover-img.inactive-right").removeClass("inactive-right");
