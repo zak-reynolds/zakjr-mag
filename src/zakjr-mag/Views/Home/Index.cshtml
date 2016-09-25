@@ -1,161 +1,18 @@
-﻿@{
+﻿@model IEnumerable<zakjr_mag.Models.BlogPost>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
+@foreach (var item in Model)
+{
 <article class="blog-post">
-    <h1>Prototyping Fishing</h1>
-    <img class="thumbnail" src="http://zakjr.com/blog/wp-content/uploads/2016/08/fishing-feature-1024x426.jpg">
-    <h2>Protofishing?</h2>
+    <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
+    <img class="thumbnail" src="@Html.DisplayFor(modelItem => item.FeaturedImage)">
+    <h2>@Html.DisplayFor(modelItem => item.Subtitle)</h2>
+    <div class="callout">Posted @Html.DisplayFor(modelItem => item.PostDate.Date)</div>
     <section class="entry-content cf" itemprop="articleBody">
-        <p class="m-all t-all d-all">After working through the design and project planning for nearly a month, I’m feeling really good about the state of Homestead. Some planning still needs to be done, but I have detailed lists and designs for everything that will be included in the prototype and the basic version of the game. Now that I have a stronger roadmap, I’m splitting my time between working on the prototype and finishing the rest of the design.</p>
-        <p class="m-all t-all d-2of5">The fishing system is something that I’ve been looking forward to implementing for a long time. There will be both a metagame and minigame surrounding fishing in Homestead. I’ve been prototyping the minigame to tune it and make sure the idea is actually fun, and it is! Apparently cabbages are harder to catch than you’d think:</p>
-        <div class="flex-video">
-            <video loop="" autoplay="">
-                <source src="http://zakjr.com/blog/wp-content/uploads/2016/08/2016-08-30-18-23-34.mp4" type="video/mp4">Your browser does not support the video tag.
-            </video>
-        </div><br>
-        <p class="m-all t-all d-all">The minigame boils down to timing and balancing the line tension (the white-on-black bar) against the fish (or… cabbage…) using its stamina to escape. If the tension is too high for too long, the hook will come loose with a chance of snapping the line and losing the tackle. The box in the lower-left corner is a quick-and-dirty indicator of the rod state: Grey represents rod down, letting the fish escape but lowering tension; Green represents rod up, which slows the fish and increases tension; and Red represents reeling, which is done by spinning the right control stick (although I have also implemented pluggable, substitute controls that allow for button tapping or button holding to keep the game accessible). The fish can jump, too!</p>
-        <p class="m-all t-all d-all">The metagame involves different types of tackle, fish, time, day, and differing methods for attracting different fish, but I’ll reveal more about that when it’s actually implemented. I’m going to keep this post short and sweet, so until next time! </p>
+        @Html.DisplayFor(modelItem => item.Content)
     </section>
 </article>
-<div class="blog-post">
-    <h3>Awesome blog post title <small>3/6/2015</small></h3>
-    <img class="thumbnail" src="http://placehold.it/850x350">
-    <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
-    <div class="callout">
-        <ul class="menu simple">
-            <li><a href="#">Author: Mike Mikers</a></li>
-            <li><a href="#">Comments: 3</a></li>
-        </ul>
-    </div>
-</div>
-<div class="blog-post">
-    <h3>Awesome blog post title <small>3/6/2015</small></h3>
-    <img class="thumbnail" src="http://placehold.it/850x350">
-    <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
-    <div class="callout">
-        <ul class="menu simple">
-            <li><a href="#">Author: Mike Mikers</a></li>
-            <li><a href="#">Comments: 3</a></li>
-        </ul>
-    </div>
-</div>
-<div class="blog-post">
-    <h3>Awesome blog post title <small>3/6/2015</small></h3>
-    <img class="thumbnail" src="http://placehold.it/850x350">
-    <p>Praesent id metus massa, ut blandit odio. Proin quis tortor orci. Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet. Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus. In pellentesque faucibus vestibulum. Nulla at nulla justo, eget luctus.</p>
-    <div class="callout">
-        <ul class="menu simple">
-            <li><a href="#">Author: Mike Mikers</a></li>
-            <li><a href="#">Comments: 3</a></li>
-        </ul>
-    </div>
-</div>
-
-<!--
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-        <li data-target="#myCarousel" data-slide-to="3"></li>
-    </ol>
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/images/banner1.svg" alt="ASP.NET" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how to build ASP.NET apps that can run anywhere.
-                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525028&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner2.svg" alt="Visual Studio" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    There are powerful new features in Visual Studio for building modern web apps.
-                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525030&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner3.svg" alt="Package Management" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Bring in libraries from NuGet, Bower, and npm, and automate tasks using Grunt or Gulp.
-                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525029&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/images/banner4.svg" alt="Microsoft Azure" class="img-responsive" />
-            <div class="carousel-caption" role="option">
-                <p>
-                    Learn how Microsoft's Azure cloud platform allows you to build, deploy, and scale web apps.
-                    <a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkID=525027&clcid=0x409">
-                        Learn More
-                    </a>
-                </p>
-            </div>
-        </div>
-    </div>
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-
-<div class="row">
-    <div class="col-md-3">
-        <h2>Application uses</h2>
-        <ul>
-            <li>Sample pages using ASP.NET Core MVC</li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=518004">Bower</a> for managing client-side libraries</li>
-            <li>Theming using <a href="http://go.microsoft.com/fwlink/?LinkID=398939">Bootstrap</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>How to</h2>
-        <ul>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398600">Add a Controller and View</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=699562">Add an appsetting in config and access it in app.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699315">Manage User Secrets using Secret Manager.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699316">Use logging to log a message.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699317">Add packages using NuGet.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699318">Add client packages using Bower.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699319">Target development, staging or production environment.</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Overview</h2>
-        <ul>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=518008">Conceptual overview of what is ASP.NET Core</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=699320">Fundamentals of ASP.NET Core such as Startup and middleware.</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=398602">Working with Data</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkId=398603">Security</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=699321">Client side development</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=699322">Develop on different platforms</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=699323">Read more on the documentation site</a></li>
-        </ul>
-    </div>
-    <div class="col-md-3">
-        <h2>Run & Deploy</h2>
-        <ul>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517851">Run your app</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=517853">Run tools such as EF migrations and more</a></li>
-            <li><a href="http://go.microsoft.com/fwlink/?LinkID=398609">Publish to Microsoft Azure Web Apps</a></li>
-        </ul>
-    </div>
-</div>
-    -->
+}

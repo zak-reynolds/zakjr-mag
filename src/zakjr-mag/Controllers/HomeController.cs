@@ -3,14 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using zakjr_mag.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace zakjr_mag.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        private readonly BlogContext _context;
+
+        public HomeController(BlogContext context)
         {
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.BlogPosts.ToListAsync());
         }
 
         public IActionResult About()
