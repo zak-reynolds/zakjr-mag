@@ -12,7 +12,7 @@
     <h2>@Html.DisplayFor(modelItem => item.Subtitle)</h2>
     <div class="callout">Posted @Html.DisplayFor(modelItem => item.PostDate.Date)</div>
     <section class="entry-content cf" itemprop="articleBody">
-        @Html.DisplayFor(modelItem => item.Content)
+        @item.Content
     </section>
 </article>
 }
