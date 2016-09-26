@@ -5314,6 +5314,22 @@ table.hover tr:nth-of-type(even):hover {
   }
 
   /* line 17, ../scss/_custom.scss */
+  .content {
+    position: absolute;
+    left: -50%;
+    transition: left 0.4s ease-in-out 0.4s;
+    float: none !important;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+  /* line 26, ../scss/_custom.scss */
+  .content.active {
+    left: 50%;
+    transition: left 0.4s ease-in-out 0s;
+  }
+
+  /* line 32, ../scss/_custom.scss */
   #mag-cover {
     position: fixed;
     top: 0;
@@ -5323,7 +5339,7 @@ table.hover tr:nth-of-type(even):hover {
     z-index: 100;
   }
 
-  /* line 26, ../scss/_custom.scss */
+  /* line 41, ../scss/_custom.scss */
   .cover-img {
     display: block;
     width: 33%;
@@ -5332,32 +5348,32 @@ table.hover tr:nth-of-type(even):hover {
     background-position: 50% 50%;
     position: fixed;
     top: 0;
-    transition: left 0.5s ease-in-out, width 0.3s ease-out;
+    transition: left 0.5s ease-in-out, width 0.3s ease-out 0.3s;
     cursor: pointer;
   }
 
-  /* line 38, ../scss/_custom.scss */
+  /* line 53, ../scss/_custom.scss */
   .cover-img-left {
     left: 0%;
     z-index: 100;
     background-image: url("../../../images/cover1.jpg");
   }
 
-  /* line 44, ../scss/_custom.scss */
+  /* line 59, ../scss/_custom.scss */
   .cover-img-mid {
     left: 33%;
     z-index: 101;
     background-image: url("http://lorempixel.com/800/800/abstract");
   }
 
-  /* line 50, ../scss/_custom.scss */
+  /* line 65, ../scss/_custom.scss */
   .cover-img-right {
     left: 66%;
     z-index: 102;
     background-image: url("../../../images/cover3.jpg");
   }
 
-  /* line 56, ../scss/_custom.scss */
+  /* line 71, ../scss/_custom.scss */
   .cover-img.active {
     z-index: 105;
     width: 50%;
@@ -5365,21 +5381,21 @@ table.hover tr:nth-of-type(even):hover {
     transition: left 0.3s ease-in-out, width 0.3s ease-out;
   }
 
-  /* line 63, ../scss/_custom.scss */
+  /* line 78, ../scss/_custom.scss */
   .cover-img.inactive-left {
     z-index: 100;
     width: 50%;
     left: -55%;
   }
 
-  /* line 69, ../scss/_custom.scss */
+  /* line 84, ../scss/_custom.scss */
   .cover-img.inactive-right {
     z-index: 100;
     width: 50%;
     left: 105%;
   }
 
-  /* line 75, ../scss/_custom.scss */
+  /* line 90, ../scss/_custom.scss */
   .cover-pop {
     position: absolute;
     left: 0;
@@ -5394,14 +5410,14 @@ table.hover tr:nth-of-type(even):hover {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
   }
 
-  /* line 88, ../scss/_custom.scss */
+  /* line 103, ../scss/_custom.scss */
   .cover-img:hover .cover-pop,
   .cover-img.active .cover-pop {
     bottom: 0px;
     opacity: 1;
   }
 
-  /* line 93, ../scss/_custom.scss */
+  /* line 108, ../scss/_custom.scss */
   .cover-pop h1 {
     font-size: 5rem !important;
     display: block;
@@ -5409,7 +5425,7 @@ table.hover tr:nth-of-type(even):hover {
     text-shadow: 0px 3px 2px 2px #333;
   }
 
-  /* line 99, ../scss/_custom.scss */
+  /* line 114, ../scss/_custom.scss */
   .cover-pop p {
     display: block;
     width: 315px;
@@ -5418,7 +5434,7 @@ table.hover tr:nth-of-type(even):hover {
     text-shadow: 0px 3px 2px #444;
   }
 
-  /* line 107, ../scss/_custom.scss */
+  /* line 122, ../scss/_custom.scss */
   .cover-crumbs {
     position: absolute;
     top: 15px;
@@ -5429,14 +5445,14 @@ table.hover tr:nth-of-type(even):hover {
     color: #333;
   }
 
-  /* line 116, ../scss/_custom.scss */
+  /* line 131, ../scss/_custom.scss */
   .cover-img.active .cover-crumbs {
     opacity: 1;
     transition: all 0.3s ease-in 0.5s;
     color: #333;
   }
 
-  /* line 121, ../scss/_custom.scss */
+  /* line 136, ../scss/_custom.scss */
   .cover-crumbs .accent {
     position: absolute;
     display: block;
@@ -5450,35 +5466,35 @@ table.hover tr:nth-of-type(even):hover {
     transition: all 0.2s ease-out;
   }
 
-  /* line 133, ../scss/_custom.scss */
+  /* line 148, ../scss/_custom.scss */
   .cover-img.active:hover button .accent {
     top: -4px;
     box-shadow: 4px 3px 7px 0px rgba(0, 0, 0, 0.2);
     background: #fff;
   }
 }
-/* line 140, ../scss/_custom.scss */
+/* line 155, ../scss/_custom.scss */
 .flex-video {
   margin-left: -2rem;
   margin-right: -2rem;
 }
 
-/* line 145, ../scss/_custom.scss */
+/* line 160, ../scss/_custom.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #112;
 }
 
-/* line 149, ../scss/_custom.scss */
+/* line 164, ../scss/_custom.scss */
 h1 {
   text-transform: uppercase;
 }
 
-/* line 153, ../scss/_custom.scss */
+/* line 168, ../scss/_custom.scss */
 p {
   color: #333;
 }
 
-/* line 157, ../scss/_custom.scss */
+/* line 172, ../scss/_custom.scss */
 .blog-post {
   font-size: 1.15rem;
   border-top: 1px solid #ddd;

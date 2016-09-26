@@ -19,6 +19,7 @@ namespace zakjr_mag.Controllers
 
         public async Task<IActionResult> Index()
         {
+            // TODO: Select the correct 3 posts to serve to the view
             return View(await _context.BlogPosts.ToListAsync());
         }
 

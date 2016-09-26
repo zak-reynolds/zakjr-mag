@@ -14,6 +14,21 @@
         left: 50%;
     }
 
+    .content {
+        position: absolute;
+        left: -50%;
+        transition: left 0.4s ease-in-out 0.4s;
+        float: none !important;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 2rem;
+
+        &.active {
+            left: 50%;
+            transition: left 0.4s ease-in-out 0s;
+        }
+    }
+
     #mag-cover {
         position: fixed;
         top: 0;
@@ -31,7 +46,7 @@
         background-position: 50% 50%;
         position: fixed;
         top: 0;
-        transition: left 0.5s ease-in-out, width 0.3s ease-out;
+        transition: left 0.5s ease-in-out, width 0.3s ease-out 0.3s;
         cursor: pointer;
     }
 

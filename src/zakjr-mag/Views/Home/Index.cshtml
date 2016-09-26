@@ -1,4 +1,4 @@
-﻿@model IEnumerable<zakjr_mag.Models.BlogPost>
+﻿@model List<zakjr_mag.Models.BlogPost>
 
 @{
     ViewData["Title"] = "Home Page";
@@ -11,6 +11,49 @@
     <img class="thumbnail" src="@Html.DisplayFor(modelItem => item.FeaturedImage)">
     <h2>@Html.DisplayFor(modelItem => item.Subtitle)</h2>
     <div class="callout">Posted @Html.DisplayFor(modelItem => item.PostDate.Date)</div>
+    <section class="entry-content cf" itemprop="articleBody">
+        @item.Content
+    </section>
+</article>
+}
+
+@section CoverLeftContent {
+@{ 
+    var item = Model[0];
+}
+<article class="blog-post">
+    <h1>@item.Title</h1>
+    <img class="thumbnail" src="@item.FeaturedImage">
+    <h2>@item.Subtitle</h2>
+    <div class="callout">Posted @item.PostDate.Date</div>
+    <section class="entry-content cf" itemprop="articleBody">
+        @item.Content
+    </section>
+</article>
+}
+@section CoverCenterContent {
+@{
+    var item = Model[1];
+}
+<article class="blog-post">
+    <h1>@item.Title</h1>
+    <img class="thumbnail" src="@item.FeaturedImage">
+    <h2>@item.Subtitle</h2>
+    <div class="callout">Posted @item.PostDate.Date</div>
+    <section class="entry-content cf" itemprop="articleBody">
+        @item.Content
+    </section>
+</article>
+}
+@section CoverRightContent {
+@{
+    var item = Model[2];
+}
+<article class="blog-post">
+    <h1>@item.Title</h1>
+    <img class="thumbnail" src="@item.FeaturedImage">
+    <h2>@item.Subtitle</h2>
+    <div class="callout">Posted @item.PostDate.Date</div>
     <section class="entry-content cf" itemprop="articleBody">
         @item.Content
     </section>
