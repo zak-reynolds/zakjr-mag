@@ -1,3 +1,7 @@
-﻿[
-
+[
+  {
+    "outputFile": "wwwroot/lib/foundation-sites/scss/site.css",
+    "inputFile": "wwwroot/lib/foundation-sites/scss/site.scss",
+    "sourceMap": false
+  }
 ]

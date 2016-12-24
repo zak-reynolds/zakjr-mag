@@ -1,30 +1,19 @@
 ﻿@media screen and (min-width:1000px) {
-
-    #content {
-        position: relative;
-        left: 0%;
-        transition: left 0.4s ease-in-out;
-
-        padding-left: 2rem;
-        padding-right: 2rem;
-        padding-top: 2rem;
-    }
-
-    #content.large-push-6 {
-        left: 50%;
-    }
-
+    
     .content {
         position: absolute;
+        height: 98vh;
         left: -50%;
         transition: left 0.4s ease-in-out 0.4s;
         float: none !important;
         padding-left: 2rem;
         padding-right: 2rem;
         padding-top: 2rem;
+        overflow: hidden;
 
         &.active {
             left: 50%;
+            height: auto;
             transition: left 0.4s ease-in-out 0s;
         }
     }

@@ -1,61 +1,22 @@
 ﻿@model List<zakjr_mag.Models.BlogPost>
+@using zakjr_mag.Models
 
 @{
     ViewData["Title"] = "Home Page";
-}
-
-@foreach (var item in Model)
-{
-<article class="blog-post">
-    <h1>@Html.DisplayFor(modelItem => item.Title)</h1>
-    <img class="thumbnail" src="@Html.DisplayFor(modelItem => item.FeaturedImage)">
-    <h2>@Html.DisplayFor(modelItem => item.Subtitle)</h2>
-    <div class="callout">Posted @Html.DisplayFor(modelItem => item.PostDate.Date)</div>
-    <section class="entry-content cf" itemprop="articleBody">
-        @item.Content
-    </section>
-</article>
+    ViewData["LeftPanelTitle"] = "Homestead";
+    ViewData["LeftPanelSubtitle"] = "Posts about my current project, a farming RPG! Progress, techniques, and lots of eye-candy";
+    ViewData["CenterPanelTitle"] = "Blendering for Unity";
+    ViewData["CenterPanelSubtitle"] = "A tutorial series geared towards those with no experience making 3D models! Learn to make your own assets for your Unity projects";
+    ViewData["RightPanelTitle"] = "Zak's Portfolio";
+    ViewData["RightPanelSubtitle"] = "I've done a bunch of stuff, and you can see it here! Prepare to see lots of little game jam games";
 }
 
 @section CoverLeftContent {
-@{ 
-    var item = Model[0];
-}
-<article class="blog-post">
-    <h1>@item.Title</h1>
-    <img class="thumbnail" src="@item.FeaturedImage">
-    <h2>@item.Subtitle</h2>
-    <div class="callout">Posted @item.PostDate.Date</div>
-    <section class="entry-content cf" itemprop="articleBody">
-        @item.Content
-    </section>
-</article>
+    @Html.Partial("BlogPostPartial", Model[0])
 }
 @section CoverCenterContent {
-@{
-    var item = Model[1];
-}
-<article class="blog-post">
-    <h1>@item.Title</h1>
-    <img class="thumbnail" src="@item.FeaturedImage">
-    <h2>@item.Subtitle</h2>
-    <div class="callout">Posted @item.PostDate.Date</div>
-    <section class="entry-content cf" itemprop="articleBody">
-        @item.Content
-    </section>
-</article>
+    @Html.Partial("BlogPostPartial", Model[1])
 }
 @section CoverRightContent {
-@{
-    var item = Model[2];
-}
-<article class="blog-post">
-    <h1>@item.Title</h1>
-    <img class="thumbnail" src="@item.FeaturedImage">
-    <h2>@item.Subtitle</h2>
-    <div class="callout">Posted @item.PostDate.Date</div>
-    <section class="entry-content cf" itemprop="articleBody">
-        @item.Content
-    </section>
-</article>
+    @Html.Partial("BlogPostPartial", Model[2])
 }

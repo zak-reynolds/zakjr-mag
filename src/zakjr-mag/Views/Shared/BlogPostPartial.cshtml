@@ -1,0 +1,27 @@
+﻿@using zakjr_mag.Models
+
+<article class="blog-post">
+    <h1>@Model.Title</h1>
+    <img class="thumbnail" src="@Model.FeaturedImage">
+    <h2>@Model.Subtitle</h2>
+    <div class="callout">
+        <span class="date-posted">Posted @Model.PostDate.Date.ToString("MM/dd/yyyy")</span>
+        @if (Model.UpdatedDate != null && ((DateTime)Model.UpdatedDate).Date != Model.PostDate.Date)
+        {
+            <span class="date-updated">, updated @(((DateTime)(Model.UpdatedDate)).Date.ToString("MM/dd/yyyy"))</span>
+        }
+    </div>
+    <section class="entry-content cf" Model.rop="articleBody">
+        @if (Model.ContentList != null && Model.ContentList.Count > 0)
+        {
+            @foreach (ContentChunk contentChunk in Model.ContentList)
+            {
+                <p>@contentChunk.Content</p>
+            }
+        }
+        @if (Model.Comments != null && Model.Comments.Count > 0)
+        {
+            @Html.Partial("NestedCommentsPartial", (List<Comment>)Model.Comments)
+        }
+    </section>
+</article>

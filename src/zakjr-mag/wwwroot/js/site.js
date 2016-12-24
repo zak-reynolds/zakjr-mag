@@ -14,13 +14,15 @@ $(".cover-img").click(function () {
             else if ($(this).hasClass("active")) foundActive = true;
             else $(this).addClass("inactive-left");
         });
-        $("#content").addClass("large-push-6");
+        window.scrollTo(0, 0);
     }
     // Dectivate image
     else {
         $(".cover-img.active").removeClass("active");
         $(".cover-img.inactive-left").removeClass("inactive-left");
         $(".cover-img.inactive-right").removeClass("inactive-right");
-        $("#content").removeClass("large-push-6");
     }
 });
+
+// Auto-size all textarea elements to content
+autosize($('textarea'));

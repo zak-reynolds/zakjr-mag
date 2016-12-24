@@ -17,71 +17,46 @@
     @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
 </head>
 <body>
-    @*<div class="top-bar">
-        <div class="top-bar-title">
-            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                <button class="menu-icon dark" type="button" data-toggle></button>
-            </span>
-            <strong>zakjr</strong>
-        </div>
-        <div id="responsive-menu">
-            <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>*@
+    @*The big magazine cover panels, only visible on large screens*@
     <div id="mag-cover" class="show-for-large">
         <div class="cover-img cover-img-left" data-toggle="contentLeft">
             <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
             <div class="cover-pop">
-                <h1>Homestead</h1>
-                <p>Posts about my current project, a farming RPG! Progress, techniques, and lots of eye-candy</p>
+                <h1>@ViewData["LeftPanelTitle"]</h1>
+                <p>@ViewData["LeftPanelSubtitle"]</p>
             </div>
         </div>
         <div class="cover-img cover-img-mid" data-toggle="contentCenter">
             <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
             <div class="cover-pop">
-                <h1>Blendering for Unity</h1>
-                <p>A tutorial series geared towards those with no experience making 3D models! Learn to make your own assets for your Unity projects</p>
+                <h1>@ViewData["CenterPanelTitle"]</h1>
+                <p>@ViewData["CenterPanelSubtitle"]</p>
             </div>
         </div>
         <div class="cover-img cover-img-right" data-toggle="contentRight">
             <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
             <div class="cover-pop">
-                <h1>Zak's Portfolio</h1>
-                <p>I've done a bunch of stuff, and you can see it here! Prepare to see lots of little game jam games</p>
+                <h1>@ViewData["RightPanelTitle"]</h1>
+                <p>@ViewData["RightPanelSubtitle"]</p>
             </div>
         </div>
     </div>
 
-    @*All the content together, medium and smaller*@
-    <div class="row expanded hide-for-large">
-        <section id="content" class="large-6 columns">
-            <div class="row column">
-                @RenderBody()
-            </div>
-        </section>
-    </div>
-
     @*The cover contents, split up for large screens*@
-    <div class="row expanded show-for-large">
+    <div class="row expanded">
         <section id="contentLeft" class="large-6 columns content" data-toggler=".active">
             <div class="row column">
-                @RenderSection("CoverLeftContent", required: true);
+                @RenderSection("CoverLeftContent", required: true)
             </div>
         </section>
         <section id="contentCenter" class="large-6 columns content" data-toggler=".active">
             <div class="row column">
-                @RenderSection("CoverCenterContent", required: true);
+                @RenderSection("CoverCenterContent", required: true)
             </div>
         </section>
         <section id="contentRight" class="large-6 columns content" data-toggler=".active">
             <div class="row column">
-                @RenderSection("CoverRightContent", required: true);
+                @RenderSection("CoverRightContent", required: true)
             </div>
         </section>
     </div>

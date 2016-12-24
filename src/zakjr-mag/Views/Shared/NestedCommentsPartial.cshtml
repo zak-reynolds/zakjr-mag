@@ -1,0 +1,14 @@
+﻿@using zakjr_mag.Models
+@model List<Comment>
+
+@if (Model != null && Model.Any())
+{
+    @foreach (Comment comment in Model)
+    {
+        <div class="callout">
+            <h5>@comment.Author</h5>
+            <p>@comment.Content</p>
+            @Html.Partial("NestedCommentsPartial", comment.Comments)
+        </div>
+    }
+}
