@@ -32,14 +32,18 @@ namespace zakjr_mag.Controllers
                 .Where(bp => bp.CategoryID == _context.Categories.FirstOrDefault(cat => cat.Name.Contains("Portfolio")).ID)
                 .MaxAsync(bp => bp.PostDate);
 
-            return View(await _context.BlogPosts
+            var blogPostsAsync = await _context.BlogPosts
                 .Where(bp =>
                     (bp.CategoryID == _context.Categories.FirstOrDefault(cat => cat.Name.Contains("Homestead")).ID && bp.PostDate == aMax) ||
                     (bp.CategoryID == _context.Categories.FirstOrDefault(cat => cat.Name.Contains("Blender")).ID && bp.PostDate == bMax) ||
                     (bp.CategoryID == _context.Categories.FirstOrDefault(cat => cat.Name.Contains("Portfolio")).ID && bp.PostDate == cMax))
                 .Include(bp => bp.ContentList)
                 .Include(bp => bp.Comments)
-                .ToListAsync());
+                .ToListAsync();
+
+            blogPostsAsync.ForEach(bp => bp.ContentList.Sort((a, b) => a.Sequence.CompareTo(b.Sequence)));
+
+            return View(blogPostsAsync);
         }
 
         public IActionResult About()

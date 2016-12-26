@@ -25,7 +25,7 @@ namespace zakjr_mag.Models
         public string Content { get; set; } // Deprecated
 
         //[InverseProperty("BlogPostID")]
-        public List<ContentChunk> ContentList { get; set; }
+        public virtual List<ContentChunk> ContentList { get; set; }
         public int? CategoryID { get; set; }
 
         public virtual Category Category { get; set; }
