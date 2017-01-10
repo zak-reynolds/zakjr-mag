@@ -45,7 +45,14 @@
         @Html.LabelFor(model => model.ContentList)
         @for (int i = 0; i < Model.ContentList.Count; ++i)
         {
-            @Html.TextAreaFor(model => model.ContentList[i].Content, new { row = "", cols = "", style = "" })
+            <div id="ContentList_@(i)__Dragger" class="dragger-row row callout" draggable="true">
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-12">
+                    @Html.TextAreaFor(model => model.ContentList[i].Content, new { row = "", cols = "", style = "" })
+                </div>
+            </div>
         }
 
     }

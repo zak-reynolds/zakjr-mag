@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ADMIN - zakjr</title>
 
+    @Html.Partial("GlobalHeadPartial")
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/foundation-sites/dist/site.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/admin.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="~/lib/foundation-sites/dist/site.min.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/admin.min.css" asp-append-version="true" />
     </environment>
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Raleway:400,400i,700,700i" rel="stylesheet"> 
 </head>
 <body>
     <div class="top-bar">
@@ -36,7 +34,18 @@
     </div>
     @*All the content together, medium and smaller*@
     <div class="row">
-        <section class="large-6 large-push-3 columns">
+        <section class="large-4 columns">
+            <div class="callout">
+                <h1>Cool sidebar bruh</h1>
+                <ul>
+                    <li>Sick link #1</li>
+                    <li>Sick link #2</li>
+                    <li>Sick link #3</li>
+                    <li>Sick link #4</li>
+                </ul>
+            </div>
+        </section>
+        <section class="large-6 large-offset-2 columns">
             <div class="row column">
                 @RenderBody()
             </div>
@@ -48,6 +57,7 @@
         <script src="~/lib/foundation-sites/dist/foundation.js"></script>
         <script src="~/lib/autosize/dist/autosize.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
+        <script src="~/js/admin.js" asp-append-version="true"></script>
     </environment>
     <environment names="Staging,Production">
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
@@ -58,8 +68,9 @@
                 asp-fallback-src="~/lib/foundation-sites/dist/foundation.min.js"
                 asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
         <script src="~/lib/autosize/dist/autosize.min.js"></script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/admin.min.js" asp-append-version="true"></script>
     </environment>
 
     @RenderSection("scripts", required: false)

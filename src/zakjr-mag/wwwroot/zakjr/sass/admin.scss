@@ -1,0 +1,26 @@
+﻿.dragger-row {
+    position: relative;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    &.dragger-state--over {
+        border: 1px dashed rgba(10, 10, 10, 0.15);
+    }
+    &.dragger-state--dragging {
+        opacity: 0.3;
+    }
+
+    &:hover {
+        .dragger-handle {
+            display: inline-block;
+        }
+        .dragger-content {
+            width: 91.66667%;
+        }
+    }
+}
+
+.dragger-handle {
+    display: none;
+    cursor: move;
+}
