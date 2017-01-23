@@ -1,4 +1,8 @@
-﻿.dragger-row {
+﻿// Vars (eventually combine with Foundation stuff)
+$copy-fontfamily: "Raleway", Helvetica, Roboto, Arial, sans-serif;
+
+// Drag-n-drop
+.dragger-row {
     position: relative;
     border: 1px solid rgba(10, 10, 10, 0.25);
     opacity: 1;
@@ -23,4 +27,40 @@
 .dragger-handle {
     display: none;
     cursor: move;
+}
+
+// Table-of-contents nav styling
+.toc-nav {
+    h2 {
+        font-family: $copy-fontfamily;
+        font-size: 1.5rem;
+    }
+    ul.leaders {
+        max-width: 70em;
+        padding: 0;
+        overflow-x: hidden;
+        list-style: none;
+    }
+    ul.leaders li:before {
+        float: left;
+        width: 0;
+        white-space: nowrap;
+        content:
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . "
+     ". . . . . . . . . . . . . . . . . . . . ";
+    }
+    ul.leaders span:first-child {
+        padding-right: 0.33em;
+        background: white;
+    }
+    ul.leaders span + span {
+        float: right;
+        padding-left: 0.33em;
+        background: white;
+    }
 }

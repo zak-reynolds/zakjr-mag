@@ -15,37 +15,30 @@
     </environment>
 </head>
 <body>
-    <div class="top-bar">
-        <div class="top-bar-title">
-            <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
-                <button class="menu-icon dark" type="button" data-toggle></button>
-            </span>
-            <strong>zakjr - Admin</strong>
-        </div>
-        <div id="responsive-menu">
-            <div class="top-bar-left">
-                <ul class="dropdown menu" data-dropdown-menu>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    @*<li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>*@
-                </ul>
-            </div>
-        </div>
-    </div>
     @*All the content together, medium and smaller*@
     <div class="row">
-        <section class="large-4 columns">
-            <div class="callout">
-                <h1>Cool sidebar bruh</h1>
-                <ul>
-                    <li>Sick link #1</li>
-                    <li>Sick link #2</li>
-                    <li>Sick link #3</li>
-                    <li>Sick link #4</li>
+        <section class="large-5 columns" style="margin-top: 1rem">
+            <div class="toc-nav">
+                <h1>Contents</h1>
+                <h2>Part 1 | <strong>The Site</strong></h2>
+                <ul class="leaders">
+                    <li><span>1</span><span><a asp-controller="Home" asp-action="Index" target="_blank">View Site</a></span></li>
+                    <li><span>2</span><span><a asp-controller="Admin" asp-action="Index">Admin Home</a></span></li>
+                </ul>
+                <h2>Part 2 | <strong>You, the User</strong></h2>
+                <ul class="leaders">
+                    <li><span>3</span><span><a asp-controller="Manage" asp-action="Index">Manage your account</a></span></li>
+                    <li><span>4</span><span><a asp-controller="Manage" asp-action="ChangePassword">Change your password</a></span></li>
+                </ul>
+                <h2>Part 3 | <strong>The Blog</strong></h2>
+                <ul class="leaders">
+                    <li><span>5</span><span><a asp-controller="Admin" asp-action="Index">Add a new post</a></span></li>
+                    <li><span>6</span><span><a asp-controller="Admin" asp-action="Index">Manage posts</a></span></li>
+                    <li><span>7</span><span><a asp-controller="Admin" asp-action="Index">Manage comments</a></span></li>
                 </ul>
             </div>
         </section>
-        <section class="large-6 large-offset-2 columns">
+        <section class="large-6 large-offset-1 columns">
             <div class="row column">
                 @RenderBody()
             </div>

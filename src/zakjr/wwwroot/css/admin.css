@@ -1,29 +1,60 @@
-/* line 1, ../zakjr/sass/admin.scss */
+/* line 5, ../zakjr/sass/admin.scss */
 .dragger-row {
   position: relative;
   border: 1px solid rgba(10, 10, 10, 0.25);
   opacity: 1;
   transition: opacity 0.3s ease-out;
 }
-/* line 6, ../zakjr/sass/admin.scss */
+/* line 10, ../zakjr/sass/admin.scss */
 .dragger-row.dragger-state--over {
   border: 1px dashed rgba(10, 10, 10, 0.15);
 }
-/* line 9, ../zakjr/sass/admin.scss */
+/* line 13, ../zakjr/sass/admin.scss */
 .dragger-row.dragger-state--dragging {
   opacity: 0.3;
 }
-/* line 14, ../zakjr/sass/admin.scss */
+/* line 18, ../zakjr/sass/admin.scss */
 .dragger-row:hover .dragger-handle {
   display: inline-block;
 }
-/* line 17, ../zakjr/sass/admin.scss */
+/* line 21, ../zakjr/sass/admin.scss */
 .dragger-row:hover .dragger-content {
   width: 91.66667%;
 }
 
-/* line 23, ../zakjr/sass/admin.scss */
+/* line 27, ../zakjr/sass/admin.scss */
 .dragger-handle {
   display: none;
   cursor: move;
+}
+
+/* line 34, ../zakjr/sass/admin.scss */
+.toc-nav h2 {
+  font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 1.5rem;
+}
+/* line 38, ../zakjr/sass/admin.scss */
+.toc-nav ul.leaders {
+  max-width: 70em;
+  padding: 0;
+  overflow-x: hidden;
+  list-style: none;
+}
+/* line 44, ../zakjr/sass/admin.scss */
+.toc-nav ul.leaders li:before {
+  float: left;
+  width: 0;
+  white-space: nowrap;
+  content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
+}
+/* line 57, ../zakjr/sass/admin.scss */
+.toc-nav ul.leaders span:first-child {
+  padding-right: 0.33em;
+  background: white;
+}
+/* line 61, ../zakjr/sass/admin.scss */
+.toc-nav ul.leaders span + span {
+  float: right;
+  padding-left: 0.33em;
+  background: white;
 }
