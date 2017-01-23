@@ -1,0 +1,114 @@
+﻿@model zakjr.Models.BlogPost
+@using zakjr.Models
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Blog Admin - Edit Post";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="small-12 column"><h4>Editing Blog Post</h4></div>
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.ID)
+    </div>
+    <div class="row">
+        <div class="small-12 medium-6 large-4 column">
+            @Html.LabelFor(model => model.Title)
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+        <div class="small-12 medium-6 large-4 column">
+            @Html.LabelFor(model => model.Subtitle)
+            @Html.EditorFor(model => model.Subtitle)
+            @Html.ValidationMessageFor(model => model.Subtitle)
+        </div>
+        <div class="small-12 medium-6 large-4 column">
+            @Html.LabelFor(model => model.FeaturedImage)
+            @Html.EditorFor(model => model.FeaturedImage)
+            @Html.ValidationMessageFor(model => model.FeaturedImage)
+        </div>
+    </div>
+    <div class="row">
+        <img src="@Model.FeaturedImage" />
+    </div>
+    @*<div class="row">
+        <div class="small-12 column">
+            @Html.LabelFor(model => model.Content)
+            @Html.TextAreaFor(model => model.Content, new { row = "", cols = "", style = "" })
+            @Html.ValidationMessageFor(model => model.Content)
+        </div>
+    </div>*@
+    @if (Model.ContentList != null)
+    {
+        @Html.LabelFor(model => model.ContentList)
+        @for (int i = 0; i < Model.ContentList.Count; ++i)
+        {
+            <div id="ContentList_@(i)__Dragger" class="dragger-row row callout" draggable="true">
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-12">
+                    @Html.TextAreaFor(model => model.ContentList[i].Content, new { row = "", cols = "", style = "" })
+                </div>
+            </div>
+        }
+
+    }
+    <div class="row column">
+        <input type="submit" value="Save" class="button success" />
+    </div>
+}
+@*
+    <form asp-action="Edit">
+        <div class="row">
+            <div class="small-12 column"><h4>Editing Blog Post: @Model.Title</h4></div>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ID" />
+        </div>
+        <div class="row">
+            <div class="small-12 medium-6 large-4 column">
+                <label asp-for="Title">
+                    Post Title
+                    <input asp-for="Title"/>
+                </label>
+                <small asp-validation-for="Title" class="error" />
+            </div>
+            <div class="small-12 medium-6 large-4 column">
+                <label asp-for="Subtitle">
+                    Post Subtitle
+                    <input asp-for="Subtitle"/>
+                </label>
+                <small asp-validation-for="Subtitle" class="error" />
+            </div>
+            <div class="small-12 medium-6 large-4 column">
+                <label asp-for="FeaturedImage">
+                    Featured Image URL
+                    <input asp-for="FeaturedImage"/>
+                </label>
+                <small asp-validation-for="FeaturedImage" class="error" />
+            </div>
+        </div>
+        <div class="row column">
+            <label asp-for="Content">
+                Blog Post Content
+                <textarea asp-for="Content">@Model.Content</textarea>
+                <small asp-validation-for="Content" class="error" />
+            </label>
+        </div>
+
+        <div class="row column">
+            <input type="submit" value="Save" class="button success" />
+        </div>
+    </form>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        <script src="~/lib/autosize/dist/autosize.js"></script>
+    }
+*@

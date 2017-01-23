@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "zakjr-mag", "src\zakjr-mag\zakjr-mag.xproj", "{0917A9E6-52AE-41B7-872E-947544450FB9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{DA297A84-E2BE-4575-800D-022A6C67DB77}"
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "zakjr-mag.Tests", "test\zakjr-mag.Tests\zakjr-mag.Tests.xproj", "{33824176-9FB2-4130-B1F3-A4EEF24CC229}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "zakjr", "src\zakjr\zakjr.xproj", "{63878279-E0FB-4AE2-B3A0-140B491CFE70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,20 +22,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0917A9E6-52AE-41B7-872E-947544450FB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0917A9E6-52AE-41B7-872E-947544450FB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0917A9E6-52AE-41B7-872E-947544450FB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0917A9E6-52AE-41B7-872E-947544450FB9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{33824176-9FB2-4130-B1F3-A4EEF24CC229}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{33824176-9FB2-4130-B1F3-A4EEF24CC229}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33824176-9FB2-4130-B1F3-A4EEF24CC229}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33824176-9FB2-4130-B1F3-A4EEF24CC229}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63878279-E0FB-4AE2-B3A0-140B491CFE70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63878279-E0FB-4AE2-B3A0-140B491CFE70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63878279-E0FB-4AE2-B3A0-140B491CFE70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63878279-E0FB-4AE2-B3A0-140B491CFE70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{0917A9E6-52AE-41B7-872E-947544450FB9} = {84A6F050-D2AD-44D5-84CE-82302DE52580}
 		{33824176-9FB2-4130-B1F3-A4EEF24CC229} = {DA297A84-E2BE-4575-800D-022A6C67DB77}
+		{63878279-E0FB-4AE2-B3A0-140B491CFE70} = {84A6F050-D2AD-44D5-84CE-82302DE52580}
 	EndGlobalSection
 EndGlobal

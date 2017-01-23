@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace zakjr_mag.Tests.Controllers
+namespace zakjr.Tests.Controllers
 {
     public class HomeControllerTests
     {

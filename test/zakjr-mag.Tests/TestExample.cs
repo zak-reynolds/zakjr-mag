@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
-using zakjr_mag.Controllers;
-using zakjr_mag.Data;
+using zakjr.Controllers;
+using zakjr.Data;
 
 namespace zakjr_mag.Tests
 {
@@ -23,12 +23,6 @@ namespace zakjr_mag.Tests
         public void IsTwoTheory(int value)
         {
             Assert.Equal(2, value);
-        }
-        [Fact]
-        public void BlogControllerReturnsAView()
-        {
-            var bc = new blogController();
-            Assert.NotNull(bc.Index());
         }
         // TODO: Learn how to use Moq or some kind of mocking framework properly
         //[Fact]

@@ -1,0 +1,27 @@
+﻿@model List<zakjr.Models.BlogPost>
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Blog Admin";
+}
+
+<table>
+    <thead>
+        <tr>
+            <th width="200">ID</th>
+            <th width="200">Title</th>
+            <th>Date</th>
+            <th width="150">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ID)</td>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.PostDate)</td>
+                <td><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

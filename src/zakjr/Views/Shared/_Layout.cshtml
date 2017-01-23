@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - zakjr</title>
+
+    @Html.Partial("GlobalHeadPartial")
+
+    @*Html.ApplicationInsightsJavaScript(TelemetryConfiguration)*@
+</head>
+<body>
+    @*The big magazine cover panels, only visible on large screens*@
+    <div id="mag-cover" class="show-for-large">
+        <div class="cover-img cover-img-left" data-toggle="contentLeft">
+            <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
+            <div class="cover-pop">
+                <h1>@ViewData["LeftPanelTitle"]</h1>
+                <p>@ViewData["LeftPanelSubtitle"]</p>
+            </div>
+        </div>
+        <div class="cover-img cover-img-mid" data-toggle="contentCenter">
+            <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
+            <div class="cover-pop">
+                <h1>@ViewData["CenterPanelTitle"]</h1>
+                <p>@ViewData["CenterPanelSubtitle"]</p>
+            </div>
+        </div>
+        <div class="cover-img cover-img-right" data-toggle="contentRight">
+            <button class="small button cover-crumbs"><span class="accent"> < </span>Back to categories</button>
+            <div class="cover-pop">
+                <h1>@ViewData["RightPanelTitle"]</h1>
+                <p>@ViewData["RightPanelSubtitle"]</p>
+            </div>
+        </div>
+    </div>
+
+    @*The cover contents, split up for large screens*@
+    <div class="row expanded">
+        <section id="contentLeft" class="large-6 columns content" data-toggler=".active">
+            <div class="row column">
+                @RenderSection("CoverLeftContent", required: true)
+            </div>
+        </section>
+        <section id="contentCenter" class="large-6 columns content" data-toggler=".active">
+            <div class="row column">
+                @RenderSection("CoverCenterContent", required: true)
+            </div>
+        </section>
+        <section id="contentRight" class="large-6 columns content" data-toggler=".active">
+            <div class="row column">
+                @RenderSection("CoverRightContent", required: true)
+            </div>
+        </section>
+    </div>
+
+    <div class="row column">
+        <hr />
+        <footer>
+            <p>&copy; 2016 - Zak Reynolds</p>
+        </footer>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/foundation-sites/dist/foundation.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                asp-fallback-test="window.jQuery">
+        </script>
+        <script src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"
+                asp-fallback-src="~/lib/foundation-sites/dist/foundation.min.js"
+                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
+        </script>
+        <script src="~/js/site.min.js" asp-append-version="true"></script>
+    </environment>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

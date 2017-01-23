@@ -1,0 +1,22 @@
+﻿@model List<zakjr.Models.BlogPost>
+@using zakjr.Models
+
+@{
+    ViewData["Title"] = "Home";
+    ViewData["LeftPanelTitle"] = "Homestead";
+    ViewData["LeftPanelSubtitle"] = "Posts about my current project, a farming RPG! Progress, techniques, and lots of eye-candy";
+    ViewData["CenterPanelTitle"] = "Blendering for Unity";
+    ViewData["CenterPanelSubtitle"] = "A tutorial series geared towards those with no experience making 3D models! Learn to make your own assets for your Unity projects";
+    ViewData["RightPanelTitle"] = "Zak's Portfolio";
+    ViewData["RightPanelSubtitle"] = "I've done a bunch of stuff, and you can see it here! Prepare to see lots of little game jam games";
+}
+
+@section CoverLeftContent {
+    @Html.Partial("BlogPostPartial", Model[0])
+}
+@section CoverCenterContent {
+    @Html.Partial("BlogPostPartial", Model[1])
+}
+@section CoverRightContent {
+    @Html.Partial("BlogPostPartial", Model[2])
+}
