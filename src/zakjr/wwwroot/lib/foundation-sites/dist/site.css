@@ -5322,7 +5322,7 @@ table.hover tr:nth-of-type(even):hover {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vh;
+    width: 0;
     height: 100vh;
     z-index: 100;
   }
@@ -5330,7 +5330,7 @@ table.hover tr:nth-of-type(even):hover {
   /* line 30, ../scss/_custom.scss */
   .cover-img {
     display: block;
-    width: 33%;
+    width: 34%;
     height: 100vh;
     background-size: cover;
     background-position: 50% 50%;
@@ -5349,14 +5349,14 @@ table.hover tr:nth-of-type(even):hover {
 
   /* line 48, ../scss/_custom.scss */
   .cover-img-mid {
-    left: 33%;
+    left: 33.5%;
     z-index: 101;
     background-image: url("http://lorempixel.com/800/800/abstract");
   }
 
   /* line 54, ../scss/_custom.scss */
   .cover-img-right {
-    left: 66%;
+    left: 67%;
     z-index: 102;
     background-image: url("../../../images/cover3.jpg");
   }
@@ -5486,4 +5486,9 @@ p {
 .blog-post {
   font-size: 1.15rem;
   border-top: 1px solid #ddd;
+}
+
+/* line 167, ../scss/_custom.scss */
+.menu > li > a.button-anchor {
+  padding: 0.85em 1em;
 }

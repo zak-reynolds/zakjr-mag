@@ -64,3 +64,16 @@ $copy-fontfamily: "Raleway", Helvetica, Roboto, Arial, sans-serif;
         background: white;
     }
 }
+
+/*Definition List*/
+.dl-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+}
+.dl-horizontal dt {
+    flex: 1 0 30%;
+    padding-right: 1em;
+}
+.dl-horizontal dd {
+    flex: 2 0 60%;
+}

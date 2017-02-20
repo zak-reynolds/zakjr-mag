@@ -28,33 +28,56 @@
   cursor: move;
 }
 
-/* line 34, ../zakjr/sass/admin.scss */
+/* line 33, ../zakjr/sass/admin.scss */
+.menu > li > a.button-anchor {
+  padding: 0.85em 1em;
+}
+
+/* line 39, ../zakjr/sass/admin.scss */
 .toc-nav h2 {
   font-family: "Raleway", Helvetica, Roboto, Arial, sans-serif;
   font-size: 1.5rem;
 }
-/* line 38, ../zakjr/sass/admin.scss */
+/* line 43, ../zakjr/sass/admin.scss */
 .toc-nav ul.leaders {
   max-width: 70em;
   padding: 0;
   overflow-x: hidden;
   list-style: none;
 }
-/* line 44, ../zakjr/sass/admin.scss */
+/* line 49, ../zakjr/sass/admin.scss */
 .toc-nav ul.leaders li:before {
   float: left;
   width: 0;
   white-space: nowrap;
   content: ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . " ". . . . . . . . . . . . . . . . . . . . ";
 }
-/* line 57, ../zakjr/sass/admin.scss */
+/* line 62, ../zakjr/sass/admin.scss */
 .toc-nav ul.leaders span:first-child {
   padding-right: 0.33em;
   background: white;
 }
-/* line 61, ../zakjr/sass/admin.scss */
+/* line 66, ../zakjr/sass/admin.scss */
 .toc-nav ul.leaders span + span {
   float: right;
   padding-left: 0.33em;
   background: white;
+}
+
+/*Definition List*/
+/* line 74, ../zakjr/sass/admin.scss */
+.dl-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* line 78, ../zakjr/sass/admin.scss */
+.dl-horizontal dt {
+  flex: 1 0 30%;
+  padding-right: 1em;
+}
+
+/* line 82, ../zakjr/sass/admin.scss */
+.dl-horizontal dd {
+  flex: 2 0 60%;
 }

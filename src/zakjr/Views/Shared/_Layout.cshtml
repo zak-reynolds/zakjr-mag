@@ -1,4 +1,7 @@
 ﻿<!DOCTYPE html>
+@{
+    ViewBag.InAdminArea = false;
+}
 <html>
 <head>
     <meta charset="utf-8" />
@@ -10,6 +13,8 @@
     @*Html.ApplicationInsightsJavaScript(TelemetryConfiguration)*@
 </head>
 <body>
+    @*User bar when logged in*@
+    @Html.Partial("_LoginPartial")
     @*The big magazine cover panels, only visible on large screens*@
     <div id="mag-cover" class="show-for-large">
         <div class="cover-img cover-img-left" data-toggle="contentLeft">
@@ -36,7 +41,7 @@
     </div>
 
     @*The cover contents, split up for large screens*@
-    <div class="row expanded">
+    <div id="content" class="row expanded">
         <section id="contentLeft" class="large-6 columns content" data-toggler=".active">
             <div class="row column">
                 @RenderSection("CoverLeftContent", required: true)
@@ -52,15 +57,12 @@
                 @RenderSection("CoverRightContent", required: true)
             </div>
         </section>
-    </div>
-
-    <div class="row column">
         <hr />
         <footer>
             <p>&copy; 2016 - Zak Reynolds</p>
         </footer>
     </div>
-
+    
     <environment names="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/foundation-sites/dist/foundation.js"></script>

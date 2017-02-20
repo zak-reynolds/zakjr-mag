@@ -4,7 +4,6 @@
     Layout = "_AdminLayout";
 }
 
-<h2>@ViewData["Title"].</h2>
 <h3>Associate your @ViewData["LoginProvider"] account.</h3>
 
 <form asp-controller="Account" asp-action="ExternalLoginConfirmation" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post" class="form-horizontal">
@@ -18,15 +17,15 @@
         logging in.
     </p>
     <div class="form-group">
-        <label asp-for="Email" class="col-md-2 control-label"></label>
-        <div class="col-md-10">
+        <label asp-for="Email" class="medium-2 column control-label"></label>
+        <div class="medium-10 column">
             <input asp-for="Email" class="form-control" />
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <button type="submit" class="btn btn-default">Register</button>
+        <div class="medium-offset-2 medium-10 column">
+            <button type="submit" class="button success">Register</button>
         </div>
     </div>
 </form>
