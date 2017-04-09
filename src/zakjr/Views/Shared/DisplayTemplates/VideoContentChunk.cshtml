@@ -1,0 +1,11 @@
+@model zakjr.Models.VideoContentChunk
+@{
+    string widescreenVideoClass = Model.VideoIsWidescreen ? "widescreen" : "";
+}
+<div class="blogitem blogitem--video">
+    <div class="blogitem__content blogitem__content--video">
+        <div class="flex-video @widescreenVideoClass">
+            <iframe src="@Model.VideoUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>

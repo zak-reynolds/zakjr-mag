@@ -1,0 +1,12 @@
+@model zakjr.Models.BlogPostCover
+<style>
+    #BlogPostCover-@Model.BlogPostID {
+        background-image: url(@Model.CoverImage);
+    }
+</style>
+<div id="BlogPostCover-@Model.BlogPostID" class="mag-cover">
+    <div class="mag-cover__hover-info">
+        <h1>@Model.Title</h1>
+        <p>@Model.TagLine</p>
+    </div>
+</div>

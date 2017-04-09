@@ -1,4 +1,18 @@
-﻿// Load Foundation
+﻿
+// Playing around
+$(".mag-cover").click(function () {
+    $(".mag-grid").removeClass("mag-grid--expandright");
+    $(".blogitem--image").removeClass("blogitem--imageexpanded");
+});
+$(".blogitem--image").click(function () {
+    $(".mag-grid").addClass("mag-grid--expandright");
+    $('html, body').animate({
+        scrollTop: $(this).offset().top - 50
+    }, 300);
+    $(".blogitem--image").addClass("blogitem--imageexpanded");
+});
+
+// Load Foundation
 $(document).foundation();
 
 // Mag Cover //////////////////////////

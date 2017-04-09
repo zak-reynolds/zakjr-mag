@@ -1,0 +1,1019 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0696310A-5FA7-45C7-A854-8F6BD99E750B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zakjr_mag.PatternLab</RootNamespace>
+    <AssemblyName>zakjr-mag.PatternLab</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'PatternLab|AnyCPU'">
+    <OutputPath>bin\PatternLab\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="patternlab\gulpfile.js" />
+    <Content Include="patternlab\public\annotations\annotations.js" />
+    <Content Include="patternlab\public\css\admin.css" />
+    <Content Include="patternlab\public\css\app.css" />
+    <Content Include="patternlab\public\css\bootstrap-theme.css" />
+    <Content Include="patternlab\public\css\bootstrap.css" />
+    <Content Include="patternlab\public\css\foundation.css" />
+    <Content Include="patternlab\public\css\foundation.min.css">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\css\pattern-scaffolding.css" />
+    <Content Include="patternlab\public\css\site.css" />
+    <Content Include="patternlab\public\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\css\style.css" />
+    <Content Include="patternlab\public\favicon.ico" />
+    <Content Include="patternlab\public\fonts\icons.dev.svg" />
+    <Content Include="patternlab\public\fonts\icons.svg" />
+    <Content Include="patternlab\public\images\ajax-loader.gif" />
+    <Content Include="patternlab\public\images\bootstrapthumb.jpg" />
+    <Content Include="patternlab\public\images\bootstrapthumb64.jpg" />
+    <Content Include="patternlab\public\images\favicon_16x16.jpg" />
+    <Content Include="patternlab\public\images\favicon_32x32.jpg" />
+    <Content Include="patternlab\public\images\fpo_16x9.png" />
+    <Content Include="patternlab\public\images\fpo_4x3.png" />
+    <Content Include="patternlab\public\images\fpo_avatar.png" />
+    <Content Include="patternlab\public\images\fpo_square.png" />
+    <Content Include="patternlab\public\images\logo.png" />
+    <Content Include="patternlab\public\images\sample\landscape-16x9-mountains.jpg" />
+    <Content Include="patternlab\public\images\sample\thumb-square-fire.jpg" />
+    <Content Include="patternlab\public\images\sample\thumb-square-gear.jpg" />
+    <Content Include="patternlab\public\images\sample\thumb-square-ivy.jpg" />
+    <Content Include="patternlab\public\images\sample\thumb-square-river.jpg" />
+    <Content Include="patternlab\public\images\sample\thumb-square-yosemite.jpg" />
+    <Content Include="patternlab\public\images\sample\tout-4x3-climber.jpg" />
+    <Content Include="patternlab\public\images\sample\tout-4x3-climbers.jpg" />
+    <Content Include="patternlab\public\images\sample\tout-4x3-stream.jpg" />
+    <Content Include="patternlab\public\index.html" />
+    <Content Include="patternlab\public\js\admin.js" />
+    <Content Include="patternlab\public\js\app.js" />
+    <Content Include="patternlab\public\js\bootstrap.js" />
+    <Content Include="patternlab\public\js\fitvids.js" />
+    <Content Include="patternlab\public\js\foundation.js" />
+    <Content Include="patternlab\public\js\foundation.min.js">
+      <DependentUpon>foundation.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\js\init.js" />
+    <Content Include="patternlab\public\js\jquery-2.0.0b2.js" />
+    <Content Include="patternlab\public\js\modernizr.js" />
+    <Content Include="patternlab\public\js\site.js" />
+    <Content Include="patternlab\public\js\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\js\vendor\jquery.min.js" />
+    <Content Include="patternlab\public\js\vendor\what-input.min.js" />
+    <Content Include="patternlab\public\lib\autosize\build.js" />
+    <Content Include="patternlab\public\lib\autosize\dist\autosize.js" />
+    <Content Include="patternlab\public\lib\autosize\dist\autosize.min.js">
+      <DependentUpon>autosize.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\autosize\example\index.html" />
+    <Content Include="patternlab\public\lib\autosize\src\autosize.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\customizer\index.html" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation-flex.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation-flex.min.css">
+      <DependentUpon>foundation-flex.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation-rtl.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation-rtl.min.css">
+      <DependentUpon>foundation-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation.min.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\foundation.min.js">
+      <DependentUpon>foundation.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.abide.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.accordion.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.accordionMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.core.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.drilldown.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.dropdown.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.dropdownMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.equalizer.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.interchange.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.magellan.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.offcanvas.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.orbit.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.responsiveMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.responsiveToggle.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.reveal.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.slider.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.sticky.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.tabs.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.toggler.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.tooltip.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.box.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.keyboard.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.mediaQuery.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.motion.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.nest.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.timerAndImageLoader.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.touch.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\plugins\foundation.util.triggers.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\dist\site.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.abide.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.accordion.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.accordionMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.core.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.drilldown.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.dropdown.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.dropdownMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.equalizer.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.interchange.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.magellan.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.offcanvas.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.orbit.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.responsiveMenu.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.responsiveToggle.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.reveal.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.slider.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.sticky.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.tabs.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.toggler.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.tooltip.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.box.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.keyboard.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.mediaQuery.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.motion.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.nest.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.timerAndImageLoader.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.touch.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\js\foundation.util.triggers.js" />
+    <Content Include="patternlab\public\lib\foundation-sites\stylesheets\ie.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\stylesheets\print.css" />
+    <Content Include="patternlab\public\lib\foundation-sites\stylesheets\screen.css" />
+    <Content Include="patternlab\public\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="patternlab\public\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="patternlab\public\lib\jquery-validation\dist\additional-methods.min.js">
+      <DependentUpon>additional-methods.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="patternlab\public\lib\jquery-validation\dist\jquery.validate.min.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\jquery\dist\jquery.js" />
+    <Content Include="patternlab\public\lib\jquery\dist\jquery.min.js">
+      <DependentUpon>jquery.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\jquery\LICENSE.txt" />
+    <Content Include="patternlab\public\lib\what-input\gulpfile.js\index.js" />
+    <Content Include="patternlab\public\lib\what-input\gulpfile.js\tasks\clean.js" />
+    <Content Include="patternlab\public\lib\what-input\gulpfile.js\tasks\default.js" />
+    <Content Include="patternlab\public\lib\what-input\gulpfile.js\tasks\scripts.js" />
+    <Content Include="patternlab\public\lib\what-input\index.html" />
+    <Content Include="patternlab\public\lib\what-input\lte-IE8.js" />
+    <Content Include="patternlab\public\lib\what-input\polyfills\ie8\EventListener.js" />
+    <Content Include="patternlab\public\lib\what-input\polyfills\ie8\indexOf.js" />
+    <Content Include="patternlab\public\lib\what-input\what-input.js" />
+    <Content Include="patternlab\public\lib\what-input\what-input.min.js">
+      <DependentUpon>what-input.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-00-colors\00-atoms-00-global-00-colors.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-00-colors\00-atoms-00-global-00-colors.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-01-fonts\00-atoms-00-global-01-fonts.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-01-fonts\00-atoms-00-global-01-fonts.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-02-animations\00-atoms-00-global-02-animations.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-02-animations\00-atoms-00-global-02-animations.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global\index.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-00-headings\00-atoms-01-text-00-headings.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-00-headings\00-atoms-01-text-00-headings.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-01-paragraph\00-atoms-01-text-01-paragraph.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-01-paragraph\00-atoms-01-text-01-paragraph.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-02-blockquote\00-atoms-01-text-02-blockquote.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-02-blockquote\00-atoms-01-text-02-blockquote.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-03-inline-elements\00-atoms-01-text-03-inline-elements.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-03-inline-elements\00-atoms-01-text-03-inline-elements.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-04-time\00-atoms-01-text-04-time.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-04-time\00-atoms-01-text-04-time.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-05-preformatted-text\00-atoms-01-text-05-preformatted-text.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-05-preformatted-text\00-atoms-01-text-05-preformatted-text.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-06-hr\00-atoms-01-text-06-hr.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-06-hr\00-atoms-01-text-06-hr.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text\index.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-00-unordered\00-atoms-02-lists-00-unordered.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-00-unordered\00-atoms-02-lists-00-unordered.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-01-ordered\00-atoms-02-lists-01-ordered.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-01-ordered\00-atoms-02-lists-01-ordered.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-02-definition\00-atoms-02-lists-02-definition.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-02-definition\00-atoms-02-lists-02-definition.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists\index.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-00-button\00-atoms-03-controls-00-button.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-00-button\00-atoms-03-controls-00-button.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-01-button-variants\00-atoms-03-controls-01-button-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-01-button-variants\00-atoms-03-controls-01-button-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-02-slider\00-atoms-03-controls-02-slider.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-02-slider\00-atoms-03-controls-02-slider.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-03-slider-variants\00-atoms-03-controls-03-slider-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-03-slider-variants\00-atoms-03-controls-03-slider-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-04-switch\00-atoms-03-controls-04-switch.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-04-switch\00-atoms-03-controls-04-switch.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-05-switch-variants\00-atoms-03-controls-05-switch-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-05-switch-variants\00-atoms-03-controls-05-switch-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-06-close-button\00-atoms-03-controls-06-close-button.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-06-close-button\00-atoms-03-controls-06-close-button.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls\index.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-00-badge\00-atoms-04-media-00-badge.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-00-badge\00-atoms-04-media-00-badge.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-01-badge-variants\00-atoms-04-media-01-badge-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-01-badge-variants\00-atoms-04-media-01-badge-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-02-label\00-atoms-04-media-02-label.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-02-label\00-atoms-04-media-02-label.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-03-label-variants\00-atoms-04-media-03-label-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-03-label-variants\00-atoms-04-media-03-label-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-04-thumbnail\00-atoms-04-media-04-thumbnail.markup-only.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-04-thumbnail\00-atoms-04-media-04-thumbnail.rendered.html" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media\index.html" />
+    <Content Include="patternlab\public\patterns\00-atoms\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-00-layout-00-float-classes\01-molecules-00-layout-00-float-classes.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-00-layout-00-float-classes\01-molecules-00-layout-00-float-classes.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-00-layout\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-01-controls-00-button-group\01-molecules-01-controls-00-button-group.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-01-controls-00-button-group\01-molecules-01-controls-00-button-group.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-01-controls\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-00-accordion-menu\01-molecules-02-navigation-00-accordion-menu.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-00-accordion-menu\01-molecules-02-navigation-00-accordion-menu.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-01-breadcrumbs\01-molecules-02-navigation-01-breadcrumbs.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-01-breadcrumbs\01-molecules-02-navigation-01-breadcrumbs.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-02-drilldown-menu\01-molecules-02-navigation-02-drilldown-menu.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-02-drilldown-menu\01-molecules-02-navigation-02-drilldown-menu.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-03-dropdown-menu\01-molecules-02-navigation-03-dropdown-menu.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-03-dropdown-menu\01-molecules-02-navigation-03-dropdown-menu.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-04-dropdown-pane\01-molecules-02-navigation-04-dropdown-pane.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-04-dropdown-pane\01-molecules-02-navigation-04-dropdown-pane.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu-variants\01-molecules-02-navigation-05-menu-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu-variants\01-molecules-02-navigation-05-menu-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu\01-molecules-02-navigation-05-menu.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu\01-molecules-02-navigation-05-menu.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-06-pagination\01-molecules-02-navigation-06-pagination.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-06-pagination\01-molecules-02-navigation-06-pagination.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-00-accordion\01-molecules-03-containers-00-accordion.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-00-accordion\01-molecules-03-containers-00-accordion.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-01-callout\01-molecules-03-containers-01-callout.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-01-callout\01-molecules-03-containers-01-callout.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-02-callout-variants\01-molecules-03-containers-02-callout-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-02-callout-variants\01-molecules-03-containers-02-callout-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-03-table\01-molecules-03-containers-03-table.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-03-table\01-molecules-03-containers-03-table.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-04-tabs\01-molecules-03-containers-04-tabs.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-04-tabs\01-molecules-03-containers-04-tabs.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-00-flex-video\01-molecules-04-media-00-flex-video.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-00-flex-video\01-molecules-04-media-00-flex-video.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-01-media-object\01-molecules-04-media-01-media-object.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-01-media-object\01-molecules-04-media-01-media-object.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-02-orbit\01-molecules-04-media-02-orbit.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-02-orbit\01-molecules-04-media-02-orbit.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-03-tooltip\01-molecules-04-media-03-tooltip.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-03-tooltip\01-molecules-04-media-03-tooltip.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-00-input\01-molecules-05-forms-00-input.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-00-input\01-molecules-05-forms-00-input.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-01-input-variants\01-molecules-05-forms-01-input-variants.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-01-input-variants\01-molecules-05-forms-01-input-variants.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-02-radio\01-molecules-05-forms-02-radio.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-02-radio\01-molecules-05-forms-02-radio.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-03-checkbox\01-molecules-05-forms-03-checkbox.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-03-checkbox\01-molecules-05-forms-03-checkbox.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-04-input-group\01-molecules-05-forms-04-input-group.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-04-input-group\01-molecules-05-forms-04-input-group.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-07-blog-post-00-blog-post-card\01-molecules-07-blog-post-00-blog-post-card.markup-only.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-07-blog-post-00-blog-post-card\01-molecules-07-blog-post-00-blog-post-card.rendered.html" />
+    <Content Include="patternlab\public\patterns\01-molecules-07-blog-post\index.html" />
+    <Content Include="patternlab\public\patterns\01-molecules\index.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-00-blog-roll\02-organisms-00-blog-00-blog-roll.markup-only.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-00-blog-roll\02-organisms-00-blog-00-blog-roll.rendered.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-01-mag-cover\02-organisms-00-blog-01-mag-cover.markup-only.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-01-mag-cover\02-organisms-00-blog-01-mag-cover.rendered.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-02-blog-post\02-organisms-00-blog-02-blog-post.markup-only.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-02-blog-post\02-organisms-00-blog-02-blog-post.rendered.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-03-blog-post-comments\02-organisms-00-blog-03-blog-post-comments.markup-only.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-03-blog-post-comments\02-organisms-00-blog-03-blog-post-comments.rendered.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog\index.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-02-navigation-00-top-bar\02-organisms-02-navigation-00-top-bar.markup-only.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-02-navigation-00-top-bar\02-organisms-02-navigation-00-top-bar.rendered.html" />
+    <Content Include="patternlab\public\patterns\02-organisms-02-navigation\index.html" />
+    <Content Include="patternlab\public\patterns\02-organisms\index.html" />
+    <Content Include="patternlab\public\patterns\03-layouts-00-blog-roll\03-layouts-00-blog-roll.markup-only.html" />
+    <Content Include="patternlab\public\patterns\03-layouts-00-blog-roll\03-layouts-00-blog-roll.rendered.html" />
+    <Content Include="patternlab\public\patterns\03-layouts-01-blog-post\03-layouts-01-blog-post.markup-only.html" />
+    <Content Include="patternlab\public\patterns\03-layouts-01-blog-post\03-layouts-01-blog-post.rendered.html" />
+    <Content Include="patternlab\public\patterns\04-pages-00-homestead-blog-roll\04-pages-00-homestead-blog-roll.markup-only.html" />
+    <Content Include="patternlab\public\patterns\04-pages-00-homestead-blog-roll\04-pages-00-homestead-blog-roll.rendered.html" />
+    <Content Include="patternlab\public\styleguide\bower_components\classList.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\EventEmitter.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\hogan-3.0.2.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\jquery.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\jwerty.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\prism.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\script.min.js" />
+    <Content Include="patternlab\public\styleguide\bower_components\typeahead.bundle.min.js" />
+    <Content Include="patternlab\public\styleguide\css\prism-typeahead.css" />
+    <Content Include="patternlab\public\styleguide\css\prism-typeahead.min.css">
+      <DependentUpon>prism-typeahead.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\styleguide\css\styleguide.css" />
+    <Content Include="patternlab\public\styleguide\css\styleguide.min.css">
+      <DependentUpon>styleguide.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\styleguide\data\patternlab-data.js" />
+    <Content Include="patternlab\public\styleguide\fonts\icomoon.svg" />
+    <Content Include="patternlab\public\styleguide\html\styleguide.html" />
+    <Content Include="patternlab\public\styleguide\js\patternlab-pattern.js" />
+    <Content Include="patternlab\public\styleguide\js\patternlab-pattern.min.js">
+      <DependentUpon>patternlab-pattern.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\styleguide\js\patternlab-viewer.js" />
+    <Content Include="patternlab\public\styleguide\js\patternlab-viewer.min.js">
+      <DependentUpon>patternlab-viewer.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\scripts\postinstall.js" />
+    <Content Include="patternlab\source\css\admin.css" />
+    <Content Include="patternlab\source\css\site.css" />
+    <Content Include="patternlab\source\css\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\favicon.ico" />
+    <Content Include="patternlab\source\js\admin.js" />
+    <Content Include="patternlab\source\js\site.js" />
+    <Content Include="patternlab\source\js\site.min.js">
+      <DependentUpon>site.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\autosize\build.js" />
+    <Content Include="patternlab\source\lib\autosize\dist\autosize.js" />
+    <Content Include="patternlab\source\lib\autosize\dist\autosize.min.js">
+      <DependentUpon>autosize.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\autosize\example\index.html" />
+    <Content Include="patternlab\source\lib\autosize\src\autosize.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-flex.css">
+      <DependentUpon>foundation-flex.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-rtl.css">
+      <DependentUpon>foundation-rtl.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation.css">
+      <DependentUpon>foundation.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\customizer\index.html" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation-flex.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation-flex.min.css">
+      <DependentUpon>foundation-flex.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation-rtl.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation-rtl.min.css">
+      <DependentUpon>foundation-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation.min.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\foundation.min.js">
+      <DependentUpon>foundation.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.abide.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.accordion.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.accordionMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.core.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.drilldown.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.dropdown.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.dropdownMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.equalizer.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.interchange.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.magellan.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.offcanvas.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.orbit.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.responsiveMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.responsiveToggle.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.reveal.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.slider.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.sticky.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.tabs.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.toggler.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.tooltip.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.box.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.keyboard.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.mediaQuery.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.motion.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.nest.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.timerAndImageLoader.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.touch.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\plugins\foundation.util.triggers.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\dist\site.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.abide.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.accordion.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.accordionMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.core.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.drilldown.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.dropdown.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.dropdownMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.equalizer.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.interchange.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.magellan.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.offcanvas.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.orbit.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.responsiveMenu.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.responsiveToggle.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.reveal.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.slider.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.sticky.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.tabs.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.toggler.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.tooltip.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.box.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.keyboard.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.mediaQuery.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.motion.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.nest.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.timerAndImageLoader.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.touch.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\js\foundation.util.triggers.js" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\scss\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\stylesheets\ie.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\stylesheets\print.css" />
+    <Content Include="patternlab\source\lib\foundation-sites\stylesheets\screen.css" />
+    <Content Include="patternlab\source\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <Content Include="patternlab\source\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js">
+      <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="patternlab\source\lib\jquery-validation\dist\additional-methods.min.js">
+      <DependentUpon>additional-methods.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="patternlab\source\lib\jquery-validation\dist\jquery.validate.min.js">
+      <DependentUpon>jquery.validate.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\jquery\dist\jquery.js" />
+    <Content Include="patternlab\source\lib\jquery\dist\jquery.min.js">
+      <DependentUpon>jquery.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\jquery\LICENSE.txt" />
+    <Content Include="patternlab\source\lib\what-input\gulpfile.js\index.js" />
+    <Content Include="patternlab\source\lib\what-input\gulpfile.js\tasks\clean.js" />
+    <Content Include="patternlab\source\lib\what-input\gulpfile.js\tasks\default.js" />
+    <Content Include="patternlab\source\lib\what-input\gulpfile.js\tasks\scripts.js" />
+    <Content Include="patternlab\source\lib\what-input\index.html" />
+    <Content Include="patternlab\source\lib\what-input\lte-IE8.js" />
+    <Content Include="patternlab\source\lib\what-input\polyfills\ie8\EventListener.js" />
+    <Content Include="patternlab\source\lib\what-input\polyfills\ie8\indexOf.js" />
+    <Content Include="patternlab\source\lib\what-input\what-input.js" />
+    <Content Include="patternlab\source\lib\what-input\what-input.min.js">
+      <DependentUpon>what-input.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\_annotations\annotations.js" />
+    <None Include="App.config" />
+    <Content Include="patternlab\.git\hooks\applypatch-msg.sample" />
+    <Content Include="patternlab\.git\hooks\commit-msg.sample" />
+    <Content Include="patternlab\.git\hooks\post-update.sample" />
+    <Content Include="patternlab\.git\hooks\pre-applypatch.sample" />
+    <Content Include="patternlab\.git\hooks\pre-commit.sample" />
+    <Content Include="patternlab\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="patternlab\.git\hooks\pre-push.sample" />
+    <Content Include="patternlab\.git\hooks\pre-rebase.sample" />
+    <Content Include="patternlab\.git\hooks\pre-receive.sample" />
+    <Content Include="patternlab\.git\hooks\update.sample" />
+    <Content Include="patternlab\.git\info\exclude" />
+    <Content Include="patternlab\.git\logs\refs\heads\master" />
+    <Content Include="patternlab\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="patternlab\.git\logs\HEAD" />
+    <Content Include="patternlab\.git\objects\pack\pack-a8ed1eb12137550e54dc903517889ea3cfdde974.idx" />
+    <Content Include="patternlab\.git\objects\pack\pack-a8ed1eb12137550e54dc903517889ea3cfdde974.pack" />
+    <Content Include="patternlab\.git\refs\heads\master" />
+    <Content Include="patternlab\.git\refs\remotes\origin\HEAD" />
+    <Content Include="patternlab\.git\config" />
+    <Content Include="patternlab\.git\description" />
+    <Content Include="patternlab\.git\HEAD" />
+    <Content Include="patternlab\.git\index" />
+    <Content Include="patternlab\.git\packed-refs" />
+    <Content Include="patternlab\.github\CONTRIBUTING.md" />
+    <Content Include="patternlab\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="patternlab\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="patternlab\public\fonts\icons.eot" />
+    <Content Include="patternlab\public\fonts\icons.ttf" />
+    <Content Include="patternlab\public\fonts\icons.woff" />
+    <Content Include="patternlab\public\lib\autosize\.bower.json" />
+    <Content Include="patternlab\public\lib\autosize\bower.json" />
+    <Content Include="patternlab\public\lib\autosize\changelog.md" />
+    <Content Include="patternlab\public\lib\autosize\LICENSE.md" />
+    <Content Include="patternlab\public\lib\autosize\package.json" />
+    <Content Include="patternlab\public\lib\autosize\readme.md" />
+    <Content Include="patternlab\public\lib\foundation-sites\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="patternlab\public\lib\foundation-sites\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-flex.css">
+      <DependentUpon>foundation-flex.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-rtl.css">
+      <DependentUpon>foundation-rtl.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation.css">
+      <DependentUpon>foundation.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation.css.map">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-flex.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-flex.css.map">
+      <DependentUpon>foundation-flex.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-rtl.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\assets\foundation-rtl.css.map">
+      <DependentUpon>foundation-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\customizer\complete.json" />
+    <Content Include="patternlab\public\lib\foundation-sites\customizer\config.yml" />
+    <Content Include="patternlab\public\lib\foundation-sites\customizer\essential.json" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_accordion.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_accordion-menu.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_badge.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_breadcrumbs.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_button.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_button-group.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_callout.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_close-button.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_drilldown.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_dropdown.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_dropdown-menu.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_flex.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_flex-video.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_float.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_label.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_media-object.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_menu.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_menu-icon.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_off-canvas.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_orbit.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_pagination.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_progress-bar.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_reveal.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_slider.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_sticky.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_switch.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_table.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_tabs.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_thumbnail.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_title-bar.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_tooltip.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_top-bar.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\components\_visibility.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_checkbox.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_error.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_fieldset.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_forms.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_help-text.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_input-group.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_label.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_meter.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_progress.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_range.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_select.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\forms\_text.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_classes.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_column.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_flex-grid.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_grid.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_gutter.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_layout.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_position.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_row.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\grid\_size.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\settings\_settings.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\scss\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\scss\typography\_alignment.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\typography\_base.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\typography\_helpers.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\typography\_print.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\typography\_typography.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_breakpoint.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_color.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_flex.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_mixins.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_selector.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_unit.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_util.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\util\_value.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\_custom.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\_foundation.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\_global.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\_settings.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\scss\site.scss" />
+    <Content Include="patternlab\public\lib\foundation-sites\.babelrc" />
+    <Content Include="patternlab\public\lib\foundation-sites\.bower.json" />
+    <Content Include="patternlab\public\lib\foundation-sites\.eslintrc" />
+    <Content Include="patternlab\public\lib\foundation-sites\.scss-lint.yml" />
+    <Content Include="patternlab\public\lib\foundation-sites\.travis.yml" />
+    <Content Include="patternlab\public\lib\foundation-sites\bower.json" />
+    <Content Include="patternlab\public\lib\foundation-sites\.bowerrc">
+      <DependentUpon>bower.json</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\foundation-sites\code-of-conduct.md" />
+    <Content Include="patternlab\public\lib\foundation-sites\config.rb" />
+    <Content Include="patternlab\public\lib\foundation-sites\docslink.sh" />
+    <Content Include="patternlab\public\lib\foundation-sites\LICENSE" />
+    <Content Include="patternlab\public\lib\foundation-sites\README.md" />
+    <Content Include="patternlab\public\lib\jquery\dist\jquery.min.map">
+      <DependentUpon>jquery.min.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\public\lib\jquery\.bower.json" />
+    <Content Include="patternlab\public\lib\jquery-validation\.bower.json" />
+    <Content Include="patternlab\public\lib\jquery-validation\LICENSE.md" />
+    <Content Include="patternlab\public\lib\jquery-validation-unobtrusive\.bower.json" />
+    <Content Include="patternlab\public\lib\what-input\.bower.json" />
+    <Content Include="patternlab\public\lib\what-input\bower.json" />
+    <Content Include="patternlab\public\lib\what-input\LICENSE" />
+    <Content Include="patternlab\public\lib\what-input\package.json" />
+    <Content Include="patternlab\public\lib\what-input\README.md" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-00-colors\00-atoms-00-global-00-colors.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-01-fonts\00-atoms-00-global-01-fonts.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-00-global-02-animations\00-atoms-00-global-02-animations.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-00-headings\00-atoms-01-text-00-headings.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-01-paragraph\00-atoms-01-text-01-paragraph.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-02-blockquote\00-atoms-01-text-02-blockquote.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-03-inline-elements\00-atoms-01-text-03-inline-elements.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-04-time\00-atoms-01-text-04-time.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-05-preformatted-text\00-atoms-01-text-05-preformatted-text.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-01-text-06-hr\00-atoms-01-text-06-hr.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-00-unordered\00-atoms-02-lists-00-unordered.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-01-ordered\00-atoms-02-lists-01-ordered.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-02-lists-02-definition\00-atoms-02-lists-02-definition.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-00-button\00-atoms-03-controls-00-button.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-01-button-variants\00-atoms-03-controls-01-button-variants.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-02-slider\00-atoms-03-controls-02-slider.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-03-slider-variants\00-atoms-03-controls-03-slider-variants.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-04-switch\00-atoms-03-controls-04-switch.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-05-switch-variants\00-atoms-03-controls-05-switch-variants.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-03-controls-06-close-button\00-atoms-03-controls-06-close-button.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-00-badge\00-atoms-04-media-00-badge.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-01-badge-variants\00-atoms-04-media-01-badge-variants.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-02-label\00-atoms-04-media-02-label.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-03-label-variants\00-atoms-04-media-03-label-variants.mustache" />
+    <Content Include="patternlab\public\patterns\00-atoms-04-media-04-thumbnail\00-atoms-04-media-04-thumbnail.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-00-layout-00-float-classes\01-molecules-00-layout-00-float-classes.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-01-controls-00-button-group\01-molecules-01-controls-00-button-group.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-00-accordion-menu\01-molecules-02-navigation-00-accordion-menu.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-01-breadcrumbs\01-molecules-02-navigation-01-breadcrumbs.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-02-drilldown-menu\01-molecules-02-navigation-02-drilldown-menu.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-03-dropdown-menu\01-molecules-02-navigation-03-dropdown-menu.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-04-dropdown-pane\01-molecules-02-navigation-04-dropdown-pane.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu\01-molecules-02-navigation-05-menu.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-05-menu-variants\01-molecules-02-navigation-05-menu-variants.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-02-navigation-06-pagination\01-molecules-02-navigation-06-pagination.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-00-accordion\01-molecules-03-containers-00-accordion.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-01-callout\01-molecules-03-containers-01-callout.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-02-callout-variants\01-molecules-03-containers-02-callout-variants.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-03-table\01-molecules-03-containers-03-table.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-03-containers-04-tabs\01-molecules-03-containers-04-tabs.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-00-flex-video\01-molecules-04-media-00-flex-video.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-01-media-object\01-molecules-04-media-01-media-object.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-02-orbit\01-molecules-04-media-02-orbit.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-04-media-03-tooltip\01-molecules-04-media-03-tooltip.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-00-input\01-molecules-05-forms-00-input.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-01-input-variants\01-molecules-05-forms-01-input-variants.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-02-radio\01-molecules-05-forms-02-radio.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-03-checkbox\01-molecules-05-forms-03-checkbox.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-05-forms-04-input-group\01-molecules-05-forms-04-input-group.mustache" />
+    <Content Include="patternlab\public\patterns\01-molecules-07-blog-post-00-blog-post-card\01-molecules-07-blog-post-00-blog-post-card.mustache" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-00-blog-roll\02-organisms-00-blog-00-blog-roll.mustache" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-01-mag-cover\02-organisms-00-blog-01-mag-cover.mustache" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-02-blog-post\02-organisms-00-blog-02-blog-post.mustache" />
+    <Content Include="patternlab\public\patterns\02-organisms-00-blog-03-blog-post-comments\02-organisms-00-blog-03-blog-post-comments.mustache" />
+    <Content Include="patternlab\public\patterns\02-organisms-02-navigation-00-top-bar\02-organisms-02-navigation-00-top-bar.mustache" />
+    <Content Include="patternlab\public\patterns\03-layouts-00-blog-roll\03-layouts-00-blog-roll.mustache" />
+    <Content Include="patternlab\public\patterns\03-layouts-01-blog-post\03-layouts-01-blog-post.mustache" />
+    <Content Include="patternlab\public\patterns\04-pages-00-homestead-blog-roll\04-pages-00-homestead-blog-roll.mustache" />
+    <Content Include="patternlab\public\styleguide\fonts\icomoon.eot" />
+    <Content Include="patternlab\public\styleguide\fonts\icomoon.ttf" />
+    <Content Include="patternlab\public\styleguide\fonts\icomoon.woff" />
+    <Content Include="patternlab\public\dependencyGraph.json" />
+    <Content Include="patternlab\public\README.md" />
+    <Content Include="patternlab\source\_data\blogposts.json" />
+    <Content Include="patternlab\source\_data\data.json" />
+    <Content Include="patternlab\source\_data\listitems.json" />
+    <Content Include="patternlab\source\_meta\_00-head.mustache" />
+    <Content Include="patternlab\source\_meta\_01-foot.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\00-colors.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\00-colors.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\01-fonts.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\01-fonts.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\02-animations.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\00-global\02-animations.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\00-headings.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\00-headings.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\01-paragraph.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\01-paragraph.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\02-blockquote.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\02-blockquote.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\03-inline-elements.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\03-inline-elements.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\04-time.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\04-time.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\05-preformatted-text.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\05-preformatted-text.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\06-hr.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\01-text\06-hr.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\00-unordered.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\00-unordered.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\01-ordered.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\01-ordered.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\02-definition.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\02-lists\02-definition.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\00-button.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\00-button.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\01-button-variants.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\01-button-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\02-slider.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\02-slider.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\03-slider-variants.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\03-slider-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\04-switch.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\04-switch.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\05-switch-variants.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\05-switch-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\06-close-button.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\03-controls\06-close-button.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\00-badge.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\00-badge.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\01-badge-variants.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\01-badge-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\02-label.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\02-label.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\03-label-variants.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\03-label-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\04-thumbnail.md" />
+    <Content Include="patternlab\source\_patterns\00-atoms\04-media\04-thumbnail.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\00-layout\00-float-classes.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\00-layout\00-float-classes.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\01-controls\00-button-group.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\01-controls\00-button-group.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\00-accordion-menu.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\00-accordion-menu.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\01-breadcrumbs.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\01-breadcrumbs.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\02-drilldown-menu.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\02-drilldown-menu.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\03-dropdown-menu.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\03-dropdown-menu.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\04-dropdown-pane.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\04-dropdown-pane.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\05-menu.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\05-menu.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\05-menu-variants.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\05-menu-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\06-pagination.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\02-navigation\06-pagination.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\00-accordion.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\00-accordion.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\01-callout.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\01-callout.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\02-callout-variants.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\02-callout-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\03-table.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\03-table.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\04-tabs.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\03-containers\04-tabs.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\00-flex-video.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\00-flex-video.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\01-media-object.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\01-media-object.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\02-orbit.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\02-orbit.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\03-tooltip.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\04-media\03-tooltip.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\00-input.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\00-input.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\01-input-variants.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\01-input-variants.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\02-radio.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\02-radio.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\03-checkbox.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\03-checkbox.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\04-input-group.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\05-forms\04-input-group.mustache" />
+    <Content Include="patternlab\source\_patterns\01-molecules\07-blog-post\00-blog-post-card.md" />
+    <Content Include="patternlab\source\_patterns\01-molecules\07-blog-post\nopnope00-blog-post-card.mustache" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\00-blog-roll.md" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\00-blog-roll.mustache" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\01-mag-cover.md" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\01-mag-cover.mustache" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\02-blog-post.md" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\02-blog-post.mustache" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\03-blog-post-comments.md" />
+    <Content Include="patternlab\source\_patterns\02-organisms\00-blog\03-blog-post-comments.mustache" />
+    <Content Include="patternlab\source\_patterns\02-organisms\02-navigation\00-top-bar.md" />
+    <Content Include="patternlab\source\_patterns\02-organisms\02-navigation\00-top-bar.mustache" />
+    <Content Include="patternlab\source\_patterns\03-layouts\00-blog-roll.md" />
+    <Content Include="patternlab\source\_patterns\03-layouts\00-blog-roll.mustache" />
+    <Content Include="patternlab\source\_patterns\03-layouts\01-blog-post.md" />
+    <Content Include="patternlab\source\_patterns\03-layouts\01-blog-post.mustache" />
+    <Content Include="patternlab\source\_patterns\04-pages\00-homestead-blog-roll.json" />
+    <Content Include="patternlab\source\_patterns\04-pages\00-homestead-blog-roll.listitems.json">
+      <DependentUpon>00-homestead-blog-roll.json</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\_patterns\04-pages\00-homestead-blog-roll.md" />
+    <Content Include="patternlab\source\_patterns\04-pages\00-homestead-blog-roll.mustache" />
+    <Content Include="patternlab\source\lib\autosize\.bower.json" />
+    <Content Include="patternlab\source\lib\autosize\bower.json" />
+    <Content Include="patternlab\source\lib\autosize\changelog.md" />
+    <Content Include="patternlab\source\lib\autosize\LICENSE.md" />
+    <Content Include="patternlab\source\lib\autosize\package.json" />
+    <Content Include="patternlab\source\lib\autosize\readme.md" />
+    <Content Include="patternlab\source\lib\foundation-sites\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="patternlab\source\lib\foundation-sites\.github\PULL_REQUEST_TEMPLATE.md" />
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation.css.map">
+      <DependentUpon>foundation.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-flex.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-flex.css.map">
+      <DependentUpon>foundation-flex.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-rtl.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\assets\foundation-rtl.css.map">
+      <DependentUpon>foundation-rtl.css</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\customizer\complete.json" />
+    <Content Include="patternlab\source\lib\foundation-sites\customizer\config.yml" />
+    <Content Include="patternlab\source\lib\foundation-sites\customizer\essential.json" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_accordion.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_accordion-menu.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_badge.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_breadcrumbs.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_button.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_button-group.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_callout.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_close-button.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_drilldown.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_dropdown.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_dropdown-menu.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_flex.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_flex-video.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_float.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_label.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_media-object.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_menu.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_menu-icon.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_off-canvas.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_orbit.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_pagination.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_progress-bar.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_reveal.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_slider.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_sticky.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_switch.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_table.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_tabs.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_thumbnail.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_title-bar.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_tooltip.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_top-bar.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\components\_visibility.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_checkbox.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_error.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_fieldset.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_forms.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_help-text.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_input-group.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_label.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_meter.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_progress.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_range.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_select.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\forms\_text.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_classes.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_column.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_flex-grid.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_grid.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_gutter.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_layout.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_position.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_row.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\grid\_size.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\settings\_settings.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\typography\_alignment.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\typography\_base.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\typography\_helpers.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\typography\_print.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\typography\_typography.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_breakpoint.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_color.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_flex.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_mixins.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_selector.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_unit.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_util.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\util\_value.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\_custom.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\_foundation.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\_global.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\_settings.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\scss\site.scss" />
+    <Content Include="patternlab\source\lib\foundation-sites\.babelrc" />
+    <Content Include="patternlab\source\lib\foundation-sites\.bower.json" />
+    <Content Include="patternlab\source\lib\foundation-sites\.eslintrc" />
+    <Content Include="patternlab\source\lib\foundation-sites\.scss-lint.yml" />
+    <Content Include="patternlab\source\lib\foundation-sites\.travis.yml" />
+    <Content Include="patternlab\source\lib\foundation-sites\bower.json" />
+    <Content Include="patternlab\source\lib\foundation-sites\.bowerrc">
+      <DependentUpon>bower.json</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\foundation-sites\code-of-conduct.md" />
+    <Content Include="patternlab\source\lib\foundation-sites\config.rb" />
+    <Content Include="patternlab\source\lib\foundation-sites\docslink.sh" />
+    <Content Include="patternlab\source\lib\foundation-sites\LICENSE" />
+    <Content Include="patternlab\source\lib\foundation-sites\README.md" />
+    <Content Include="patternlab\source\lib\jquery\dist\jquery.min.map">
+      <DependentUpon>jquery.min.js</DependentUpon>
+    </Content>
+    <Content Include="patternlab\source\lib\jquery\.bower.json" />
+    <Content Include="patternlab\source\lib\jquery-validation\.bower.json" />
+    <Content Include="patternlab\source\lib\jquery-validation\LICENSE.md" />
+    <Content Include="patternlab\source\lib\jquery-validation-unobtrusive\.bower.json" />
+    <Content Include="patternlab\source\lib\what-input\.bower.json" />
+    <Content Include="patternlab\source\lib\what-input\bower.json" />
+    <Content Include="patternlab\source\lib\what-input\LICENSE" />
+    <Content Include="patternlab\source\lib\what-input\package.json" />
+    <Content Include="patternlab\source\lib\what-input\README.md" />
+    <Content Include="patternlab\.editorconfig" />
+    <Content Include="patternlab\.eslintrc" />
+    <Content Include="patternlab\LICENSE" />
+    <Content Include="patternlab\package.json" />
+    <Content Include="patternlab\patternlab-config.json" />
+    <Content Include="patternlab\README.md" />
+    <Content Include="patternlab\source\_patterns\04-pages\01-homestead-blog-post.mustache" />
+    <Content Include="patternlab\source\_patterns\04-pages\01-homestead-blog-post.md" />
+    <Content Include="patternlab\source\_patterns\04-pages\01-homestead-blog-post.json" />
+    <Content Include="patternlab\source\_patterns\04-pages\00-homestead-blog-roll - Copy.listitems.json">
+      <DependentUpon>01-homestead-blog-post.json</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="patternlab\.git\objects\info\" />
+    <Folder Include="patternlab\.git\refs\tags\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,11 @@
+@model zakjr.Models.ImageContentChunk
+<style>
+    #ImageContentChunk-@Model.ID {
+        background-image: @Model.LoadingGradient;
+    }
+</style>
+<figure id="ImageContentChunk-@Model.ID" class="blogitem blogitem--image">
+    <img class="blogitem__image" src="@Model.ImageUrl" alt="@Model.ImageAlt" />
+    <figcaption class="blogitem__caption">@Model.ImageCaption</figcaption>
+    @if (Model.CanExpand) { <div class="blogitem__image-hover-info">Click to expand without losing your place.</div> }
+</figure>

@@ -19,7 +19,7 @@ namespace zakjr.Models
         public string Subtitle { get; set; }
         public DateTime PostDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
-        [RegularExpression(@"(\b(https?):\/\/)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|](\.jpg|\.png|\.gif|\.svg)", ErrorMessage="Featured image must be a URL path to a png, jpg, svg, or gif")]
+        [RegularExpression(@"(\b(https?):\/\/)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|](\.jpg|\.png|\.gif|\.svg)", ErrorMessage = "Featured image must be a URL path to a png, jpg, svg, or gif")]
         public string FeaturedImage { get; set; }
         [StringLength(800)]
         public string Content { get; set; } // Deprecated

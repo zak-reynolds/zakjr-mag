@@ -1,1 +1,421 @@
-﻿
+﻿/* --------------------- */
+/* Reset */
+/* --------------------- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+}
+
+/* --------------------- */
+/* Typography */
+/* --------------------- */
+
+body {
+    font-family: 'Quicksand', Helvetica, sans-serif;
+    background-color: #eee;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Fjalla One', Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+pre, code {
+    font-family: 'Inconsolata', monospace;
+}
+
+/* --------------------- */
+/* Layout */
+/* --------------------- */
+/* Small */
+.mag-grid {
+    display: grid;
+}
+
+.mag-grid__manage {
+    
+}
+
+.mag-grid__nav {
+    background-color: #151515;
+    width: 100%;
+}
+
+.mag-grid__cover {
+    
+    background-color: rgba(10,10,10, 0.5);
+}
+
+.mag-grid__content {
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+.mag-grid__footer {
+    background-color: #151515;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Large */
+@media screen and (min-width: 1000px) {
+    .mag-grid {
+        grid-template-columns: [left] 50% [center] 50% [right];
+        grid-template-rows: [top navrow-start] auto [navrow-end] auto [footrow-start] auto [footrow-end bottom];
+        grid-template-areas:
+            "cover nav"
+            "cover content"
+            "cover footer";
+        transition: all 0.3s ease-out;
+    }
+    .mag-grid--expandleft {
+        grid-template-columns: [left] 75% [center] 25% [right];
+    }
+    .mag-grid--expandright {
+        grid-template-columns: [left] 25% [center] 75% [right];
+    }
+
+    .mag-grid__manage {
+        grid-area: nav;
+
+    }
+
+    .mag-grid__nav {
+        grid-area: nav;
+    }
+
+    .mag-grid__cover {
+        position: fixed;
+        width: 50%;
+        height: 100vh;
+        transition: all 0.3s ease-out;
+    }
+    .mag-grid--expandleft .mag-grid__cover {
+        width: 75%;
+    }
+    .mag-grid--expandright .mag-grid__cover {
+        width: 25%;
+    }
+    .mag-grid--expandright .mag-grid__cover {
+        cursor: pointer;
+    }
+
+    .mag-grid__content {
+        grid-area: content;
+        overflow: hidden;
+    }
+
+    .mag-grid__footer {
+        grid-area: footer;
+    }
+}
+
+/* --------------------- */
+/* Organisms */
+/* --------------------- */
+
+.blog-post > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* --------------------- */
+/* Molecules */
+/* --------------------- */
+
+/* Magazine Cover */
+.mag-cover {
+    width: 100%;
+    height: 15rem;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.5);
+}
+
+@media screen and (min-width: 1000px) {
+    .mag-cover {
+        height: 100%;
+    }
+}
+
+.mag-cover__hover-info h1 {
+    top: 3rem;
+    position: relative;
+    background-color: #151515;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 2rem 0.5rem 5rem;
+    font-size: 3rem;
+}
+.mag-cover__hover-info p {
+    top: 4rem;
+    position: relative;
+    background-color: #151515;
+    color: #fff;
+    display: inline-block;
+    padding: 0.5rem 2rem 0.5rem 5rem;
+}
+
+/* Magazine Nav */
+.mag-nav {
+    display: flex;
+    justify-content: center;
+}
+.mag-nav__item {
+    display: flex;
+    justify-content: center;
+    font-family: 'Inconsolata', monospace;
+    padding: 0.3rem 2rem;
+    background-color: #151515;
+}
+.mag-nav__item a {
+    color: #fff;
+    display: inline-block;
+    align-self: center;
+    text-decoration: none;
+}
+
+/* Blog Post */
+.blog-post__intro {
+    display: flex;
+    margin-top: 1.5rem;
+    font-family: 'Inconsolata', monospace;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-post__intro p {
+    background-color: #fff;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    max-width: 85%;
+    margin-top: 1rem;
+}
+
+/* Blog Content: All */
+.blogitem {
+    margin-top: 2rem;
+}
+
+.blogitem {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+/* Blog Content: Text */
+.blogitem--text + .blogitem--text {
+    margin-top: 1rem;
+}
+
+/* Blog Content: Image */
+.blogitem--image {
+    overflow: hidden;
+    position: relative;
+    border: 5px solid #fff;
+}
+
+.blogitem__image {
+    width: 100%;
+    filter: brightness(1) grayscale(0%) blur(0px);
+    transition: filter 0.3s ease-out;
+}
+.blogitem--image:not(.blogitem--imageexpanded) .blogitem__image {
+    cursor: pointer;
+}
+.blogitem--image:not(.blogitem--imageexpanded):hover .blogitem__image {
+    filter: brightness(0.8) grayscale(65%) blur(0px);
+}
+
+.blogitem__image-hover-info,
+.blogitem__caption {
+    position: absolute;
+    max-width: 100%;
+    display: block;
+    transition: all 0.15s ease-out;
+    color: #fff;
+    background-color: #000;
+    padding: 0.5rem 1rem;
+    min-width: 50%;
+    font-family: 'Inconsolata', monospace;
+}
+
+.blogitem__image-hover-info {
+    top: 0;
+    right: 100%;
+    text-align: right;
+}
+.blogitem--image:not(.blogitem--imageexpanded):hover .blogitem__image-hover-info {
+    right: 0%;
+}
+
+.blogitem__caption {
+    bottom: 0;
+    left: 100%;
+}
+.blogitem--image:hover .blogitem__caption,
+.blogitem--image.blogitem--imageexpanded .blogitem__caption {
+    left: 0%;
+}
+
+/* Blog Content: Code */
+.blogitem--code {
+    background: #222;
+    padding-bottom: 1.5rem;
+    box-shadow: inset 0 0 20px 2px rgba(0, 0, 0, 0.5);
+}
+.blogitem--code h3 {
+    background-color: #050505;
+    color: #fff;
+    margin: 0;
+    padding: 1rem;
+}
+.codeblock {
+    color: #ddd;
+    font-size: 0.9rem;
+    overflow: hidden;
+    position: relative;
+}
+.codeblock__code {
+    padding-left: 2.5rem;
+}
+.codeblock__linenumbers {
+    position: absolute;
+    left: 1rem;
+    top: 2.1em;
+    color: #444;
+    bottom: 1rem;
+    overflow: hidden;
+    font-family: 'Inconsolata', monospace;
+}
+
+/* Comments */
+.blog-comments {
+    margin-left: 1rem;
+    font-family: 'Inconsolata', monospace;
+}
+.blog-comments__title {
+    border-top: #ddd dashed;
+    padding-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.comment {
+    margin-bottom: 0rem;
+    position: relative;
+    background: #222;
+    padding: 1rem 0 0 1.5rem;
+    position: relative;
+}
+.comment--alt {
+    background: #eee;
+}
+.comment>.comment__content>h4 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+.comment--alt>.comment__content>h4 {
+    color: #222;
+}
+.comment:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 1rem solid transparent;
+    border-left: 1rem solid #eee;
+    border-bottom: 1rem solid transparent;
+    top: 1rem;
+    left: 0;
+}
+.comment--alt:after {
+    border-left: 1rem solid #222;
+}
+.comment__content {
+    margin: 0 1rem 0 0.5rem;
+}
+.comment__content>p {
+    color: #eee;
+}
+.comment--alt>.comment__content>p {
+    color: #222;
+}
+.comment__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-bottom: 1.1rem;
+}
+.comment__actions>date {
+    color: #666;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+/* Comment molecule -- subcomment variant*/
+.comment--sub .comment__profile {
+    margin-left: 2.1rem;
+    border-left: 1px dashed #333;
+    padding-left: 3rem;
+}
+.comment--sub .comment__profile::before {
+    position: absolute;
+    content: "-----";
+    display: block;
+    top: 0.35rem;
+    left: 0;
+}
+/* Comment molecule form*/
+.comment--form textarea {
+    max-width: 100%;
+    background-color: #151515;
+    color: #fff;
+    border: 1px solid #000;
+}
+
+/* --------------------- */
+/* Atoms */
+/* --------------------- */
+.button {
+    background: transparent;
+    border: 2px solid #333;
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    font-family: monospace;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+.button:hover {
+    box-shadow: 0 0 0 rgba(0,0,0,0.5);
+    border: 2px solid #000;
+    background: #fff;
+}
+
+.button--on-dark {
+    border: 2px solid #ddd;
+    color: #ddd;
+}
+.button--on-dark:hover {
+    border: 2px solid #fff;
+    background: #000;
+}
+.button--action {
+    border: 2px solid #0a0;
+    color: #0a0;
+}
+.button--action:hover {
+    background: #0a0;
+    color: #fff;
+}
+
+.button--comment-respond {
+    margin-left: 1rem;
+}

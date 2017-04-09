@@ -1,0 +1,14 @@
+@model zakjr.Models.BlogPost
+
+<article class="blog-post">
+    <section class="blog-post__intro">
+        <p>Posted @Html.DisplayFor(model => model.PostDate) in @Model.Category.Name</p>
+        @if (Model.UpdatedDate != null) { <p>Updated @Model.UpdatedDate</p> }
+    </section>
+    <section class="blog-post__content">
+    @foreach (ContentChunk cc in Model.ContentList)
+    {
+        @Html.DisplayFor(model => cc, cc.GetType().Name)
+    }
+    </section>
+</article>

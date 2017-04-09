@@ -1,0 +1,20 @@
+@model zakjr.Models.Comment
+<div class="comment @ViewData["CommentAltClass"]">
+    <div class="comment__content">
+        <h4>@Model.Author</h4>
+        <p>@Model.Content</p>
+        <div class="comment__actions">
+            <button class="button button--comment-respond @ViewData["CommentButtonClass"]">Respond</button>
+            <date>@Html.DisplayFor(model => model.PostDate)</date>
+        </div>
+    </div>
+    @if (Model.Comments != null) {
+        foreach (Comment c in Model.Comments)
+        {
+            @Html.DisplayFor(model => c, new {
+                CommentAltClass = String.Equals(ViewData["CommentAltClass"], "") ? "comment--alt" : "",
+                CommentButtonClass = String.Equals(ViewData["CommentButtonClass"], "") ? "button--on-dark" : "",
+            } )
+        }
+    }
+</div>

@@ -1,0 +1,27 @@
+@model CommentSection
+@{
+    bool oddLevel = false;
+}
+<section class="blog-comments">
+    <header class="blog-comments__title">
+        <h1>@Model.HeaderText</h1>
+    </header>
+    @foreach (Comment c in Model.CommentList)
+    {
+        @Html.DisplayFor(model => c, new { CommentAltClass = "", CommentButtonClass = "button--on-dark" })
+    }
+
+    <div class="comment comment--form">
+        <div class="comment__content">
+            <div class="comment__profile">
+                <input type="text" value="anonymous" />
+            </div>
+            <textarea placeholder="Questions? Comments? Replies? Anything goes! (except spam or exceedingly explicit content)"></textarea>
+
+            <div class="comment__actions">
+                <button class="button button--comment-respond button--action">Reply to Zak&apos;s post</button>
+                <date>Today</date>
+            </div>
+        </div>
+    </div>
+</section>

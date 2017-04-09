@@ -1,0 +1,32 @@
+@model zakjr.ViewModels.BlogPostViewModel
+
+@{
+    Layout = "_LayoutMag";
+    ViewData["Title"] = Model.ThePost.Title;
+    ViewData["BodyClass"] = "mag-grid";
+}
+
+<section class="mag-grid__manage">
+    @*User bar when logged in*@
+    @Html.Partial("_LoginPartial")
+</section>
+
+<section class="mag-grid__nav">
+    @Html.Partial("_magNav", Model.TheNavigation)
+</section>
+
+<section class="mag-grid__cover">
+    @Html.Partial("_magCover", Model.TheCover)
+</section>
+
+<section class="mag-grid__content">
+    
+    @Html.Partial("_magPost", Model.ThePost)
+
+    @Html.Partial("_magComments", Model.TheComments)
+
+</section>
+
+<section class="mag-grid__footer">
+    @Html.Partial("_footer")
+</section>

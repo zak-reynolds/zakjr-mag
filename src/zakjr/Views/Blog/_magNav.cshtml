@@ -1,0 +1,12 @@
+@model IEnumerable<zakjr.Models.NavItem>
+
+<ul class="mag-nav">
+    @foreach (NavItem ni in Model)
+    {
+    <li class="mag-nav__item">
+        <a href="@ni.Url">
+            @ni.DisplayText
+        </a>
+    </li>
+    }
+</ul>

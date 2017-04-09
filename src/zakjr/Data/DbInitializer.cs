@@ -64,22 +64,22 @@ namespace zakjr_mag.Data
             }
             var contentChunks = new ContentChunk[]
             {
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="After working through the design and project planning for nearly a month, I’m feeling really good about the state of Homestead. Some planning still needs to be done, but I have detailed lists and designs for everything that will be included in the prototype and the basic version of the game. Now that I have a stronger roadmap, I’m splitting my time between working on the prototype and finishing the rest of the design." },
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="The fishing system is something that I’ve been looking forward to implementing for a long time. There will be both a metagame and minigame surrounding fishing in Homestead. I’ve been prototyping the minigame to tune it and make sure the idea is actually fun, and it is!" },
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="Apparently cabbages are harder to catch than you’d think:" },
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="VIDEO GOES HERE" },
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="The minigame boils down to timing and balancing the line tension (the white-on-black bar) against the fish (or… cabbage…) using its stamina to escape. If the tension is too high for too long, the hook will come loose with a chance of snapping the line and losing the tackle. The box in the lower-left corner is a quick-and-dirty indicator of the rod state: Grey represents rod down, letting the fish escape but lowering tension; Green represents rod up, which slows the fish and increases tension; and Red represents reeling, which is done by spinning the right control stick (although I have also implemented pluggable, substitute controls that allow for button tapping or button holding to keep the game accessible). The fish can jump, too!" },
-                    new ContentChunk { BlogPostID=blogPosts[0].ID, Content="The metagame involves different types of tackle, fish, time, day, and differing methods for attracting different fish, but I’ll reveal more about that when it’s actually implemented. I’m going to keep this post short and sweet, so until next time!" },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="After working through the design and project planning for nearly a month, I’m feeling really good about the state of Homestead. Some planning still needs to be done, but I have detailed lists and designs for everything that will be included in the prototype and the basic version of the game. Now that I have a stronger roadmap, I’m splitting my time between working on the prototype and finishing the rest of the design." },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="The fishing system is something that I’ve been looking forward to implementing for a long time. There will be both a metagame and minigame surrounding fishing in Homestead. I’ve been prototyping the minigame to tune it and make sure the idea is actually fun, and it is!" },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="Apparently cabbages are harder to catch than you’d think:" },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="VIDEO GOES HERE" },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="The minigame boils down to timing and balancing the line tension (the white-on-black bar) against the fish (or… cabbage…) using its stamina to escape. If the tension is too high for too long, the hook will come loose with a chance of snapping the line and losing the tackle. The box in the lower-left corner is a quick-and-dirty indicator of the rod state: Grey represents rod down, letting the fish escape but lowering tension; Green represents rod up, which slows the fish and increases tension; and Red represents reeling, which is done by spinning the right control stick (although I have also implemented pluggable, substitute controls that allow for button tapping or button holding to keep the game accessible). The fish can jump, too!" },
+                    new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="The metagame involves different types of tackle, fish, time, day, and differing methods for attracting different fish, but I’ll reveal more about that when it’s actually implemented. I’m going to keep this post short and sweet, so until next time!" },
 
-                    new ContentChunk { BlogPostID=blogPosts[1].ID, Content="Blendering for Unity blah blah" },
-                    new ContentChunk { BlogPostID=blogPosts[1].ID, Content="Hidy ho hidy ho" },
-                    new ContentChunk { BlogPostID=blogPosts[1].ID, Content="Blender is cool" },
-                    new ContentChunk { BlogPostID=blogPosts[1].ID, Content="SCREEN GOES HERE" },
+                    new TextContentChunk { BlogPostID=blogPosts[1].ID, Content="Blendering for Unity blah blah" },
+                    new TextContentChunk { BlogPostID=blogPosts[1].ID, Content="Hidy ho hidy ho" },
+                    new TextContentChunk { BlogPostID=blogPosts[1].ID, Content="Blender is cool" },
+                    new TextContentChunk { BlogPostID=blogPosts[1].ID, Content="SCREEN GOES HERE" },
 
-                    new ContentChunk { BlogPostID=blogPosts[2].ID, Content="Portfolio schmortfolieo" },
-                    new ContentChunk { BlogPostID=blogPosts[2].ID, Content="Sippydipoodoop" },
-                    new ContentChunk { BlogPostID=blogPosts[2].ID, Content="Nonesnes" },
-                    new ContentChunk { BlogPostID=blogPosts[2].ID, Content="Not a Super Nintendo, nonsense!" }
+                    new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Portfolio schmortfolieo" },
+                    new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Sippydipoodoop" },
+                    new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Nonesnes" },
+                    new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Not a Super Nintendo, nonsense!" }
             };
             foreach (ContentChunk cc in contentChunks)
             {
