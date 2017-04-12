@@ -5,24 +5,20 @@
 @inject UserManager<ApplicationUser> UserManager
 @if (SignInManager.IsSignedIn(User))
 {
-    <div class="top-bar">
-        <div class="top-bar-right">
-            <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
-                <ul class="menu align-right">
-                    <li>
-                        <button class="button small" type="submit">Log off</button>
-                    </li>
-                    <li>
-                        <a class="button small button-anchor" asp-area="" asp-controller="Home" asp-action="Index">View Site</a>
-                    </li>
-                    <li>
-                        <a class="button small button-anchor" asp-area="" asp-controller="Admin" asp-action="Index">Admin Home</a>
-                    </li>
-                    <li>
-                        <a asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-                    </li>
-                </ul>
-            </form>
-        </div>
-    </div>
+    <form asp-area="" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="manage-bar-form">
+        <ul class="manage-bar-nav">
+            <li class="manage-bar-nav__item">
+                <a class="button button--on-dark" asp-area="" asp-controller="Manage" asp-action="Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+            </li>
+            <li class="manage-bar-nav__item">
+                <a class="button button--on-dark" asp-area="" asp-controller="Admin" asp-action="Index">Admin Home</a>
+            </li>
+            <li class="manage-bar-nav__item">
+                <a class="button button--on-dark" asp-area="" asp-controller="Home" asp-action="Index">View Site</a>
+            </li>
+            <li class="manage-bar-nav__item">
+                <button class="button button--on-dark" type="submit">Log off</button>
+            </li>
+        </ul>
+    </form>
 }

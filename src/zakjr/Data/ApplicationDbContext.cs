@@ -22,12 +22,12 @@ namespace zakjr.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(builder);
+            builder.Entity<TextContentChunk>();
+            builder.Entity<CodeContentChunk>();
+            builder.Entity<ImageContentChunk>();
+            builder.Entity<VideoContentChunk>();
 
-            builder.Entity<Category>().ToTable("Category");
-            builder.Entity<BlogPost>().ToTable("BlogPost");
-            builder.Entity<ContentChunk>().ToTable("ContentChunk");
-            builder.Entity<Comment>().ToTable("Comment");
+            base.OnModelCreating(builder);
         }
     }
 }

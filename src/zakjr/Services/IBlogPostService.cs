@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using zakjr.Models;
 using zakjr.ViewModels;
 
 namespace zakjr.Services
@@ -40,5 +41,34 @@ namespace zakjr.Services
         /// </summary>
         /// <returns>ViewModel containing all posts in given category.</returns>
         Task<CategoryViewModel> GetBlogPostsInCategoryAsync(int id);
+
+        /// <summary>
+        /// Adds a new blog post.
+        /// </summary>
+        void CreateBlogPost(BlogPost newPost);
+        /// <summary>
+        /// Adds a new blog post.
+        /// </summary>
+        Task CreateBlogPostAsync(BlogPost newPost);
+
+        /// <summary>
+        /// Adds a new Text content chunk.
+        /// </summary>
+        Task AddTextContentChunkAsync(TextContentChunk theChunk);
+
+        /// <summary>
+        /// Adds a new Image content chunk.
+        /// </summary>
+        Task AddImageContentChunkAsync(ImageContentChunk theChunk);
+
+        /// <summary>
+        /// Adds a new Code content chunk.
+        /// </summary>
+        Task AddCodeContentChunkAsync(CodeContentChunk theChunk);
+
+        /// <summary>
+        /// Adds a new Video content chunk.
+        /// </summary>
+        Task AddVideoContentChunkAsync(VideoContentChunk theChunk);
     }
 }

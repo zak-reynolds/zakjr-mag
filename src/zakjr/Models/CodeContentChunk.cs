@@ -12,9 +12,6 @@ namespace zakjr.Models
         [StringLength(15)]
         public string CodeLanguage { get; set; }
 
-        public void SetContent(string value)
-        {
-            Content = value;
-        }
+        public string Content { get; set; }
     }
 }

@@ -8,9 +8,6 @@ namespace zakjr.Models
 {
     public class TextContentChunk : ContentChunk
     {
-        public void SetContent(string value)
-        {
-            Content = WebUtility.HtmlEncode(value);
-        }
+        public string Content { get; set; }
     }
 }

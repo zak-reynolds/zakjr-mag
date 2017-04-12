@@ -8,17 +8,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using zakjr.Data;
 using zakjr.Models;
+using zakjr.Services;
 
 namespace zakjr.Controllers
 {
     [Authorize]
     public class AdminController : Controller
     {
+        // TODO: Remove dependency on ADC (should be in bps)
         private readonly ApplicationDbContext _context;
+        private readonly IBlogPostService _blogPostService;
 
-        public AdminController(ApplicationDbContext context)
+        public AdminController(
+            ApplicationDbContext context,
+            IBlogPostService blogPostService)
         {
             _context = context;
+            _blogPostService = blogPostService;
         }
 
         public async Task<IActionResult> Index()
@@ -66,6 +72,161 @@ namespace zakjr.Controllers
             }
             InitViewBag();
             return View(postToUpdate);
+        }
+
+        //
+        // Blog post
+        [HttpGet]
+        public IActionResult CreateBlogPost()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CreateBlogPost(
+            [Bind("Title,Subtitle,FeaturedImage,CategoryID")] BlogPost thePost)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _blogPostService.CreateBlogPostAsync(thePost);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format(
+                    @"Could not save changes. Try again in a few. :: {0} :: {1}",
+                    e.Message,
+                    e.InnerException.Message));
+            }
+            return View(thePost);
+        }
+
+        //
+        // Text Content Chunk
+        [HttpGet]
+        public IActionResult AddTextContentChunk()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddTextContentChunk(
+            [Bind("Sequence,BlogPostID,Content")] TextContentChunk theChunk)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _blogPostService.AddTextContentChunkAsync(theChunk);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format(
+                    @"Could not save changes. Try again in a few. :: {0} :: {1}",
+                    e.Message,
+                    e.InnerException.Message));
+            }
+            return View(theChunk);
+        }
+
+        //
+        // Image Content Chunk
+        [HttpGet]
+        public IActionResult AddImageContentChunk()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddImageContentChunk(
+            [Bind("Sequence,BlogPostID,ImageUrl,ImageAlt,CanExpand,LoadingGradient,ImageCaption")] ImageContentChunk theChunk)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _blogPostService.AddImageContentChunkAsync(theChunk);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format(
+                    @"Could not save changes. Try again in a few. :: {0} :: {1}",
+                    e.Message,
+                    e.InnerException.Message));
+            }
+            return View(theChunk);
+        }
+
+        //
+        // Code Content Chunk
+        [HttpGet]
+        public IActionResult AddCodeContentChunk()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddCodeContentChunk(
+            [Bind("Sequence,BlogPostID,CodeLanguage,Content")] CodeContentChunk theChunk)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _blogPostService.AddCodeContentChunkAsync(theChunk);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format(
+                    @"Could not save changes. Try again in a few. :: {0} :: {1}",
+                    e.Message,
+                    e.InnerException.Message));
+            }
+            return View(theChunk);
+        }
+
+        //
+        // Video Content Chunk
+        [HttpGet]
+        public IActionResult AddVideoContentChunk()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AddVideoContentChunk(
+            [Bind("Sequence,BlogPostID,VideoUrl,VideoIsWidescreen")] VideoContentChunk theChunk)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    await _blogPostService.AddVideoContentChunkAsync(theChunk);
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                ModelState.AddModelError("", String.Format(
+                    @"Could not save changes. Try again in a few. :: {0} :: {1}",
+                    e.Message,
+                    e.InnerException.Message));
+            }
+            return View(theChunk);
         }
 
         protected void InitViewBag()

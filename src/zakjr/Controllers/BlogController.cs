@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using zakjr.Services;
 using zakjr.ViewModels;
+using zakjr.Models;
 
 namespace zakjr.Controllers
 {

@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace zakjr.Models
 {
-    public class ContentChunk
+    public abstract class ContentChunk
     {
         public int ID { get; set; }
-        public string Content { get; set; }
         public int Sequence { get; set; }
 
         public int BlogPostID { get; set; }

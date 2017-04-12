@@ -10,6 +10,15 @@ namespace zakjr.Services
 {
     public class MockBlogPostService : IBlogPostService
     {
+        public void CreateBlogPost(BlogPost newPost)
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task CreateBlogPostAsync(BlogPost newPost)
+        {
+            throw new NotImplementedException();
+        }
 
         public BlogPostViewModel GetBlogPost(int id)
         {
@@ -200,6 +209,30 @@ namespace zakjr.Services
         }
 
         public async Task<RecentPostsByCategoryViewModel> GetRecentPostsByCategoryAsync()
+        {
+            throw new NotImplementedException();
+        }
+        public Task AddTextContentChunk(TextContentChunk theChunk)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddTextContentChunkAsync(TextContentChunk theChunk)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddImageContentChunkAsync(ImageContentChunk theChunk)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddCodeContentChunkAsync(CodeContentChunk theChunk)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task AddVideoContentChunkAsync(VideoContentChunk theChunk)
         {
             throw new NotImplementedException();
         }

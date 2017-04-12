@@ -1,0 +1,66 @@
+@model zakjr.Models.BlogPost
+
+@{
+    ViewData["Title"] = "Create Blog Post";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@foreach (var error in ViewData.ModelState.Values.SelectMany(x => x.Errors))
+{
+    <div style="background:#fff;margin:0.5rem;padding:1rem;">
+        <p class="error">@error.ErrorMessage</p>
+    </div>
+}
+
+<form asp-action="CreateBlogPost">
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label asp-for="Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Subtitle" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Subtitle" class="form-control" />
+                <span asp-validation-for="Subtitle" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="PostDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <date>@DateTime.Today</date>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="FeaturedImage" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FeaturedImage" class="form-control" />
+                <span asp-validation-for="FeaturedImage" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CategoryID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CategoryID" class="form-control" />
+                <span asp-validation-for="CategoryID" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

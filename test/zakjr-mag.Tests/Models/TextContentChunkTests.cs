@@ -16,7 +16,7 @@ namespace zakjr_mag.Tests.Models
             var textContentChunk = new TextContentChunk();
 
             // Act
-            textContentChunk.SetContent(@"<script>This could be dangerous</script><p class='do not want'>Html should be added by app, not user</p>");
+            textContentChunk.Content = "<script>This could be dangerous</script><p class='do not want'>Html should be added by app, not user</p>";
 
             // Assert
             Assert.False(

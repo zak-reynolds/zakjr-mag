@@ -1,0 +1,10 @@
+@model zakjr.Models.TextContentChunk
+
+<div id="ContentList_@(Model.ID)__Dragger" class="dragger-row row callout" draggable="true">
+    <div class="dragger-handle column small-1 callout secondary text-center">
+        <i class="fa fa-arrows-v" aria-hidden="true"></i>
+    </div>
+    <div class="dragger-content column small-12">
+        @Html.TextAreaFor(model => model.Content, new { row = "", cols = "", style = "" })
+    </div>
+</div>

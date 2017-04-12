@@ -87,5 +87,48 @@ namespace zakjr.Services
         {
             throw new NotImplementedException();
         }
+
+        public void CreateBlogPost(BlogPost newPost)
+        {
+            newPost.PostDate = DateTime.Now;
+            _context.Add(newPost);
+            _context.SaveChanges();
+        }
+
+        public async Task CreateBlogPostAsync(BlogPost newPost)
+        {
+            newPost.PostDate = DateTime.Now;
+            _context.Add(newPost);
+            await _context.SaveChangesAsync();
+        }
+        public async Task AddTextContentChunk(TextContentChunk theChunk)
+        {
+            _context.Add(theChunk);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddTextContentChunkAsync(TextContentChunk theChunk)
+        {
+            _context.Add(theChunk);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddImageContentChunkAsync(ImageContentChunk theChunk)
+        {
+            _context.Add(theChunk);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddCodeContentChunkAsync(CodeContentChunk theChunk)
+        {
+            _context.Add(theChunk);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task AddVideoContentChunkAsync(VideoContentChunk theChunk)
+        {
+            _context.Add(theChunk);
+            await _context.SaveChangesAsync();
+        }
     }
 }

@@ -37,7 +37,7 @@ namespace zakjr.Tests.Controllers
             ViewResult viewResult = await homeController.Index() as ViewResult;
 
             // Assert
-            viewResult.Model
+            
 
 
             throw new NotImplementedException();
