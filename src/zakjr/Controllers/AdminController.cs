@@ -36,7 +36,10 @@ namespace zakjr.Controllers
         public async Task<IActionResult> Edit(int id)
         {
             var postModel = await _context.BlogPosts
-                .Include(post => post.ContentList)
+                .Include(post => post.TextContentList)
+                .Include(post => post.ImageContentList)
+                .Include(post => post.CodeContentList)
+                .Include(post => post.VideoContentList)
                 .SingleOrDefaultAsync(post => post.ID == id);
             InitViewBag();
             return View(postModel);
@@ -49,16 +52,23 @@ namespace zakjr.Controllers
             if (id == null) return NotFound();
 
             var postToUpdate = await _context.BlogPosts
-                .Include(post => post.ContentList)
+                .Include(post => post.TextContentList)
+                .Include(post => post.ImageContentList)
+                .Include(post => post.CodeContentList)
+                .Include(post => post.VideoContentList)
                 .SingleOrDefaultAsync(post => post.ID == id);
             postToUpdate.UpdatedDate = DateTime.Now;
+
             if (await TryUpdateModelAsync<BlogPost>(
                 postToUpdate, "",
                 post => post.Title,
                 post => post.Subtitle,
                 post => post.UpdatedDate,
                 post => post.FeaturedImage,
-                post => post.ContentList))
+                post => post.TextContentList,
+                post => post.ImageContentList,
+                post => post.CodeContentList,
+                post => post.VideoContentList))
             {
                 try
                 {
@@ -70,6 +80,7 @@ namespace zakjr.Controllers
                     ModelState.AddModelError("", "Unable to save changes :c");
                 }
             }
+            //TODO: Shouldn't need to do this
             InitViewBag();
             return View(postToUpdate);
         }

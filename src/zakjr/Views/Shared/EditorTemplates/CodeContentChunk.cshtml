@@ -1,52 +1,9 @@
 @model zakjr.Models.CodeContentChunk
 
-<div class="blogitem blogitem--code">
-    <h3>@Model.CodeLanguage</h3>
-    <div class="blogitem__content codeblock">
-<pre class="codeblock__code"><code class="@Model.CodeLanguage">
-@Model.Content
-</code></pre>
-<pre class="codeblock__linenumbers">
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33
-34
-35
-36
-37
-38
-39
-40
-</pre>
-    </div>
-</div>
+@Html.HiddenFor(model => model.Sequence)
+
+@Html.LabelFor(model => model.CodeLanguage)
+@Html.EditorFor(model => model.CodeLanguage)
+
+@Html.LabelFor(model => model.Content)
+@Html.EditorFor(model => model.Content)

@@ -29,8 +29,18 @@ namespace zakjr.Services
         {
             var result = new BlogPostViewModel();
             result.ThePost = await _context.BlogPosts.FirstOrDefaultAsync(bp => bp.ID == id);
-            result.ThePost.ContentList = await _context.ContentChunks.Where(cc => cc.BlogPostID == id).ToListAsync();
-            result.ThePost.ContentList.Sort((a, b) => a.Sequence.CompareTo(b.Sequence));
+            result.ThePost.TextContentList = await _context.TextContentChunks.Where(cc => cc.BlogPostID == id).ToListAsync();
+            result.ThePost.ImageContentList = await _context.ImageContentChunks.Where(cc => cc.BlogPostID == id).ToListAsync();
+            result.ThePost.CodeContentList = await _context.CodeContentChunks.Where(cc => cc.BlogPostID == id).ToListAsync();
+            result.ThePost.VideoContentList = await _context.VideoContentChunks.Where(cc => cc.BlogPostID == id).ToListAsync();
+
+            var contentList = new List<ContentChunk>();
+            contentList.AddRange(result.ThePost.TextContentList);
+            contentList.AddRange(result.ThePost.ImageContentList);
+            contentList.AddRange(result.ThePost.CodeContentList);
+            contentList.AddRange(result.ThePost.VideoContentList);
+            contentList.Sort((a, b) => a.Sequence.CompareTo(b.Sequence));
+            result.ThePostContent = contentList;
 
             result.TheComments = new CommentSection()
             {

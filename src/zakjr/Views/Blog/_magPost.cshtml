@@ -1,12 +1,12 @@
-@model zakjr.Models.BlogPost
+@model zakjr.ViewModels.BlogPostViewModel
 
 <article class="blog-post">
     <section class="blog-post__intro">
-        <p>Posted @Html.DisplayFor(model => model.PostDate) in @Model.Category.Name</p>
-        @if (Model.UpdatedDate != null) { <p>Updated @Model.UpdatedDate</p> }
+        <p>Posted @Html.DisplayFor(model => model.ThePost.PostDate) in @Model.ThePost.Category.Name</p>
+        @if (Model.ThePost.UpdatedDate != null) { <p>Updated @Model.ThePost.UpdatedDate</p> }
     </section>
     <section class="blog-post__content">
-    @foreach (ContentChunk cc in Model.ContentList)
+    @foreach (ContentChunk cc in Model.ThePostContent)
     {
         @Html.DisplayFor(model => cc, cc.GetType().Name)
     }

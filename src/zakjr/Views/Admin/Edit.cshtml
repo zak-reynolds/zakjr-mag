@@ -34,11 +34,61 @@
         <img src="@Model.FeaturedImage" />
     </div>
 
-    @if (Model.ContentList != null)
+    @if (Model.TextContentList != null)
     {
-        @foreach (ContentChunk cc in Model.ContentList)
+        for (int i = 0; i < Model.TextContentList.Count; ++i)
         {
-            @Html.EditorFor(model => cc, cc.GetType().Name)
+            <div id="ContentList_@(Model.TextContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-11">
+                    @Html.HiddenFor(model => model.TextContentList[i].Sequence)
+                    @Html.EditorFor(model => model.TextContentList[i].Content)
+                </div>
+            </div>
+        }
+        for (int i = 0; i < Model.ImageContentList.Count; ++i)
+        {
+            <div id="ContentList_@(Model.ImageContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-11">
+                    @Html.HiddenFor(model => model.ImageContentList[i].Sequence)
+                    @Html.EditorFor(model => model.ImageContentList[i].ImageUrl)
+                    @Html.EditorFor(model => model.ImageContentList[i].ImageAlt)
+                    @Html.EditorFor(model => model.ImageContentList[i].ImageCaption)
+                    @Html.EditorFor(model => model.ImageContentList[i].LoadingGradient)
+                </div>
+            </div>
+        }
+        for (int i = 0; i < Model.CodeContentList.Count; ++i)
+        {
+            <div id="ContentList_@(Model.CodeContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-11">
+                    @Html.HiddenFor(model => model.CodeContentList[i].Sequence)
+                    @Html.EditorFor(model => model.CodeContentList[i].CodeLanguage)
+                    @Html.EditorFor(model => model.CodeContentList[i].Content)
+                </div>
+            </div>
+        }
+        for (int i = 0; i < Model.VideoContentList.Count; ++i)
+        {
+            <div id="ContentList_@(Model.VideoContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+
+                <div class="dragger-handle column small-1 callout secondary text-center">
+                    <i class="fa fa-arrows-v" aria-hidden="true"></i>
+                </div>
+                <div class="dragger-content column small-11">
+                    @Html.HiddenFor(model => model.VideoContentList[i].Sequence)
+                    @Html.EditorFor(model => model.VideoContentList[i].VideoUrl)
+                    @Html.EditorFor(model => model.VideoContentList[i].VideoIsWidescreen)
+                </div>
+            </div>
         }
     }
     <div class="row column">

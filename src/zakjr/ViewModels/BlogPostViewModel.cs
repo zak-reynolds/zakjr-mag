@@ -10,6 +10,8 @@ namespace zakjr.ViewModels
     {
         public BlogPost ThePost { get; set; }
 
+        public IEnumerable<ContentChunk> ThePostContent { get; set; }
+
         public IEnumerable<NavItem> TheNavigation { get; set; }
 
         public BlogPostCover TheCover { get; set; }

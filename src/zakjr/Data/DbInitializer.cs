@@ -62,7 +62,7 @@ namespace zakjr_mag.Data
             {
                 context.Add(b);
             }
-            var contentChunks = new ContentChunk[]
+            var contentChunks = new TextContentChunk[]
             {
                     new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="After working through the design and project planning for nearly a month, I’m feeling really good about the state of Homestead. Some planning still needs to be done, but I have detailed lists and designs for everything that will be included in the prototype and the basic version of the game. Now that I have a stronger roadmap, I’m splitting my time between working on the prototype and finishing the rest of the design." },
                     new TextContentChunk { BlogPostID=blogPosts[0].ID, Content="The fishing system is something that I’ve been looking forward to implementing for a long time. There will be both a metagame and minigame surrounding fishing in Homestead. I’ve been prototyping the minigame to tune it and make sure the idea is actually fun, and it is!" },
@@ -81,7 +81,7 @@ namespace zakjr_mag.Data
                     new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Nonesnes" },
                     new TextContentChunk { BlogPostID=blogPosts[2].ID, Content="Not a Super Nintendo, nonsense!" }
             };
-            foreach (ContentChunk cc in contentChunks)
+            foreach (TextContentChunk cc in contentChunks)
             {
                 context.Add(cc);
             }

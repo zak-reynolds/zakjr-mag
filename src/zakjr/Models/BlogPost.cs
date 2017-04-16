@@ -21,11 +21,13 @@ namespace zakjr.Models
         public DateTime? UpdatedDate { get; set; }
         [RegularExpression(@"(\b(https?):\/\/)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|](\.jpg|\.png|\.gif|\.svg)", ErrorMessage = "Featured image must be a URL path to a png, jpg, svg, or gif")]
         public string FeaturedImage { get; set; }
-        [StringLength(800)]
-        public string Content { get; set; } // Deprecated
 
         //[InverseProperty("BlogPostID")]
-        public virtual List<ContentChunk> ContentList { get; set; }
+        public virtual List<TextContentChunk> TextContentList { get; set; }
+        public virtual List<ImageContentChunk> ImageContentList { get; set; }
+        public virtual List<CodeContentChunk> CodeContentList { get; set; }
+        public virtual List<VideoContentChunk> VideoContentList { get; set; }
+
         public int? CategoryID { get; set; }
 
         public virtual Category Category { get; set; }

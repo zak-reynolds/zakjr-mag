@@ -53,19 +53,11 @@ namespace zakjr.Services
                     Tagline = "A mocked category"
                 },
                 CategoryID = -1,
-                ContentList = new List<ContentChunk>()
+                TextContentList = new List<TextContentChunk>()
                 {
                     new TextContentChunk()
                     {
                         Content = ipsString3
-                    },
-                    new ImageContentChunk()
-                    {
-                        ID = 1,
-                        ImageUrl = "http://zakjr.com/blog/wp-content/uploads/2016/03/betsy-768x432.png",
-                        CanExpand = true,
-                        ImageCaption = "Mocked image",
-                        LoadingGradient = "linear-gradient(135deg, #627d4d 0%,#1f3b08 100%)"
                     },
                     new TextContentChunk()
                     {
@@ -75,6 +67,29 @@ namespace zakjr.Services
                     {
                         Content = ipsString1
                     },
+                    new TextContentChunk()
+                    {
+                        Content = ipsString3
+                    },
+                    new TextContentChunk()
+                    {
+                        Content = ipsString5
+                    },
+                    new TextContentChunk()
+                    {
+                        Content = ipsString3
+                    }
+                },
+                ImageContentList = new List<ImageContentChunk>()
+                {
+                    new ImageContentChunk()
+                    {
+                        ID = 1,
+                        ImageUrl = "http://zakjr.com/blog/wp-content/uploads/2016/03/betsy-768x432.png",
+                        CanExpand = true,
+                        ImageCaption = "Mocked image",
+                        LoadingGradient = "linear-gradient(135deg, #627d4d 0%,#1f3b08 100%)"
+                    },
                     new ImageContentChunk()
                     {
                         ID = 2,
@@ -83,19 +98,6 @@ namespace zakjr.Services
                         ImageCaption = "Mocked image",
                         LoadingGradient = "linear-gradient(135deg, #627d4d 0%,#1f3b08 100%)"
                     },
-                    new TextContentChunk()
-                    {
-                        Content = ipsString3
-                    },
-                    new CodeContentChunk()
-                    {
-                        Content = "int LifeUniverseEverything(string question) { return 42; }",
-                        CodeLanguage = "cs"
-                    },
-                    new TextContentChunk()
-                    {
-                        Content = ipsString5
-                    },
                     new ImageContentChunk()
                     {
                         ID = 3,
@@ -103,10 +105,21 @@ namespace zakjr.Services
                         CanExpand = true,
                         ImageCaption = "Mocked image",
                         LoadingGradient = "linear-gradient(135deg, #627d4d 0%,#1f3b08 100%)"
-                    },
-                    new TextContentChunk()
+                    }
+                },
+                VideoContentList = new List<VideoContentChunk>()
+                {
+                    new VideoContentChunk()
                     {
-                        Content = ipsString3
+                        VideoUrl = "https://www.youtube.com/embed/tVj0ZTS4WF4",
+                        VideoIsWidescreen = true
+                    }
+                },
+                CodeContentList = new List<CodeContentChunk>() {
+                    new CodeContentChunk()
+                    {
+                        Content = "int LifeUniverseEverything(string question) { return 42; }",
+                        CodeLanguage = "cs"
                     }
                 },
                 Comments = new List<Comment>()
@@ -157,6 +170,7 @@ namespace zakjr.Services
                     }
                 }
             };
+
             result.TheComments = new CommentSection()
             {
                 HeaderText = "Convey a thought",
@@ -186,7 +200,6 @@ namespace zakjr.Services
                     DisplayText = "Current Page"
                 }
             };
-
 
             await Task.Delay(200);
 

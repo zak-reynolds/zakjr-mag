@@ -17,17 +17,10 @@ namespace zakjr.Data
 
         public DbSet<Category> Categories { get; set; }
         public DbSet<BlogPost> BlogPosts { get; set; }
-        public DbSet<ContentChunk> ContentChunks { get; set; }
+        public DbSet<TextContentChunk> TextContentChunks { get; set; }
+        public DbSet<CodeContentChunk> CodeContentChunks { get; set; }
+        public DbSet<ImageContentChunk> ImageContentChunks { get; set; }
+        public DbSet<VideoContentChunk> VideoContentChunks { get; set; }
         public DbSet<Comment> Comments { get; set; }
-
-        protected override void OnModelCreating(ModelBuilder builder)
-        {
-            builder.Entity<TextContentChunk>();
-            builder.Entity<CodeContentChunk>();
-            builder.Entity<ImageContentChunk>();
-            builder.Entity<VideoContentChunk>();
-
-            base.OnModelCreating(builder);
-        }
     }
 }

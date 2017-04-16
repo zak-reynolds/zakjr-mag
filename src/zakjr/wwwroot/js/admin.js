@@ -3,12 +3,20 @@ let dragSrc = null;
 let target = false;
 
 function swapContentListData(a, b) {
-    const aTextArea = a.querySelector('textarea'), bTextArea = b.querySelector('textarea');
-    const aID = aTextArea.id, aName = aTextArea.name;
-    aTextArea.id = bTextArea.id;
-    aTextArea.name = bTextArea.name;
-    bTextArea.id = aID;
-    bTextArea.name = aName;
+    //const aTextArea = a.querySelector('textarea'), bTextArea = b.querySelector('textarea');
+    //const aID = aTextArea.id, aName = aTextArea.name;
+    //aTextArea.id = bTextArea.id;
+    //aTextArea.name = bTextArea.name;
+    //bTextArea.id = aID;
+    //bTextArea.name = aName;
+}
+
+function setSequenceField() {
+    let index = 0;
+    cols.forEach(function (col) {
+        col.querySelector("input[type='hidden']").value = index;
+        index++;
+    });
 }
 
 function onDragMouseDown(e) {
@@ -47,6 +55,7 @@ function onDragDrop(e) {
         dragSrc.innerHTML = this.innerHTML;
         this.innerHTML = e.dataTransfer.getData('text/html');
         swapContentListData(this, dragSrc);
+        setSequenceField();
     }
 
     return false;

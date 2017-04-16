@@ -1,0 +1,10 @@
+@model zakjr.Models.ContentChunk
+
+<div id="ContentList_@(Model.ID)__Dragger" class="dragger-row row callout" draggable="true">
+    <div class="dragger-handle column small-1 callout secondary text-center">
+        <i class="fa fa-arrows-v" aria-hidden="true"></i>
+    </div>
+    <div class="dragger-content column small-11">
+        @Html.EditorFor(model => model, Model.GetType().Name, $"cc-{Model.ID}")
+    </div>
+</div>
