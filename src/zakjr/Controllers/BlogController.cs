@@ -23,6 +23,8 @@ namespace zakjr.Controllers
         {
             BlogPostViewModel vm = await _blogPostService.GetBlogPostAsync(id);
 
+            if (!vm.ThePost.IsPublished) Response.Redirect("/error/404");
+
             return View(vm);
         }
     }

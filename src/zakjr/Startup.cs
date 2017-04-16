@@ -83,7 +83,13 @@ namespace zakjr
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Blog}/{action=Index}/{id?}");
+                routes.MapRoute(
+                    name: "errors",
+                    template: "error/{errorcode}",
+                    defaults: new { controller = "Error", action = "DisplayError" });
             });
+
+            app.UseStatusCodePagesWithRedirects("/error/{0}");
 
             zakjr_mag.Data.DbInitializer.Initialize(context);
         }

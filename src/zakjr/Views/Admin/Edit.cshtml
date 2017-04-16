@@ -16,6 +16,16 @@
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
     </div>
+    <div class="row column">
+        @if (Model.IsPublished) {
+            <p>Published!</p>
+        }
+        else {
+            <p>Not yet published</p>
+            @Html.LabelFor(model => model.IsPublished)
+            @Html.EditorFor(model => model.IsPublished)
+        }
+    </div>
     <div class="row">
         <div class="small-12 column">
             @Html.LabelFor(model => model.Title)
@@ -26,6 +36,11 @@
             @Html.LabelFor(model => model.Subtitle)
             @Html.EditorFor(model => model.Subtitle)
             @Html.ValidationMessageFor(model => model.Subtitle)
+        </div>
+        <div class="small-12 column">
+            @Html.LabelFor(model => model.Slug)
+            @Html.EditorFor(model => model.Slug)
+            @Html.ValidationMessageFor(model => model.Slug)
         </div>
         <div class="small-12 column">
             @Html.LabelFor(model => model.FeaturedImage)

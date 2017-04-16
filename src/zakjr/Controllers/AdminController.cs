@@ -64,6 +64,8 @@ namespace zakjr.Controllers
                 post => post.Title,
                 post => post.Subtitle,
                 post => post.UpdatedDate,
+                post => post.IsPublished,
+                post => post.Slug,
                 post => post.FeaturedImage,
                 post => post.TextContentList,
                 post => post.ImageContentList,
@@ -96,7 +98,7 @@ namespace zakjr.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateBlogPost(
-            [Bind("Title,Subtitle,FeaturedImage,CategoryID")] BlogPost thePost)
+            [Bind("Title,Subtitle,FeaturedImage,CategoryID,IsPublished,Slug")] BlogPost thePost)
         {
             try
             {

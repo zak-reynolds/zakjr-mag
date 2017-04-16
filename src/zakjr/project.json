@@ -41,7 +41,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
         "version": "1.0.0-preview2-final",
         "type": "build"
-    }
+    },
+    "Markdig": "0.10.7"
   },
   "tools": {
     "BundlerMinifier.Core": "2.0.238",
