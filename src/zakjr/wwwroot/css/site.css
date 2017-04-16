@@ -50,7 +50,7 @@ pre, code {
 }
 
 .mag-grid__cover {
-    
+    z-index: 10;
     background-color: rgba(10,10,10, 0.5);
 }
 
@@ -408,25 +408,33 @@ pre, code {
     color: #333;
     font-size: 0.8rem;
 }
-.button:hover {
+.button:hover,
+.button:active,
+.button:focus {
     box-shadow: 0 0 0 rgba(0,0,0,0.5);
     border: 2px solid #000;
     background: #fff;
+    color: #000;
 }
 
 .button--on-dark {
     border: 2px solid #ddd;
     color: #ddd;
 }
-.button--on-dark:hover {
+.button--on-dark:hover,
+.button--on-dark:active,
+.button--on-dark:focus {
     border: 2px solid #fff;
     background: #000;
+    color: #fff;
 }
 .button--action {
     border: 2px solid #0a0;
     color: #0a0;
 }
-.button--action:hover {
+.button--action:hover,
+.button--action:active,
+.button--action:focus {
     background: #0a0;
     color: #fff;
 }

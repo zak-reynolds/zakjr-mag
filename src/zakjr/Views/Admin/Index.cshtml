@@ -7,10 +7,10 @@
 <table>
     <thead>
         <tr>
-            <th width="200">ID</th>
-            <th width="200">Title</th>
+            <th>ID</th>
+            <th>Title</th>
             <th>Date</th>
-            <th width="150">Action</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -20,7 +20,7 @@
                 <td>@Html.DisplayFor(modelItem => item.ID)</td>
                 <td>@Html.DisplayFor(modelItem => item.Title)</td>
                 <td>@Html.DisplayFor(modelItem => item.PostDate)</td>
-                <td><a asp-action="Edit" asp-route-id="@item.ID">Edit</a></td>
+                <td><a asp-action="Edit" asp-route-id="@item.ID" class="button">Edit</a></td>
             </tr>
         }
     </tbody>

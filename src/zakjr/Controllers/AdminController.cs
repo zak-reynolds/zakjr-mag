@@ -119,9 +119,10 @@ namespace zakjr.Controllers
         //
         // Text Content Chunk
         [HttpGet]
-        public IActionResult AddTextContentChunk()
+        public IActionResult AddTextContentChunk(int id = 0)
         {
-            return View();
+            TextContentChunk newChunk = new TextContentChunk() { BlogPostID = id, Sequence = -1 };
+            return View(newChunk);
         }
 
         [HttpPost]
@@ -134,7 +135,7 @@ namespace zakjr.Controllers
                 if (ModelState.IsValid)
                 {
                     await _blogPostService.AddTextContentChunkAsync(theChunk);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit", new { id = theChunk.BlogPostID });
                 }
             }
             catch (Exception e)
@@ -144,15 +145,16 @@ namespace zakjr.Controllers
                     e.Message,
                     e.InnerException.Message));
             }
-            return View(theChunk);
+            return View();
         }
 
         //
         // Image Content Chunk
         [HttpGet]
-        public IActionResult AddImageContentChunk()
+        public IActionResult AddImageContentChunk(int id = 0)
         {
-            return View();
+            ImageContentChunk newChunk = new ImageContentChunk() { BlogPostID = id, Sequence = -1 };
+            return View(newChunk);
         }
 
         [HttpPost]
@@ -165,7 +167,7 @@ namespace zakjr.Controllers
                 if (ModelState.IsValid)
                 {
                     await _blogPostService.AddImageContentChunkAsync(theChunk);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit", new { id = theChunk.BlogPostID });
                 }
             }
             catch (Exception e)
@@ -175,15 +177,16 @@ namespace zakjr.Controllers
                     e.Message,
                     e.InnerException.Message));
             }
-            return View(theChunk);
+            return View();
         }
 
         //
         // Code Content Chunk
         [HttpGet]
-        public IActionResult AddCodeContentChunk()
+        public IActionResult AddCodeContentChunk(int id = 0)
         {
-            return View();
+            CodeContentChunk newChunk = new CodeContentChunk() { BlogPostID = id, Sequence = -1 };
+            return View(newChunk);
         }
 
         [HttpPost]
@@ -196,7 +199,7 @@ namespace zakjr.Controllers
                 if (ModelState.IsValid)
                 {
                     await _blogPostService.AddCodeContentChunkAsync(theChunk);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit", new { id = theChunk.BlogPostID });
                 }
             }
             catch (Exception e)
@@ -206,15 +209,16 @@ namespace zakjr.Controllers
                     e.Message,
                     e.InnerException.Message));
             }
-            return View(theChunk);
+            return View();
         }
 
         //
         // Video Content Chunk
         [HttpGet]
-        public IActionResult AddVideoContentChunk()
+        public IActionResult AddVideoContentChunk(int id = 0)
         {
-            return View();
+            VideoContentChunk newChunk = new VideoContentChunk() { BlogPostID = id, Sequence = -1 };
+            return View(newChunk);
         }
 
         [HttpPost]
@@ -227,7 +231,7 @@ namespace zakjr.Controllers
                 if (ModelState.IsValid)
                 {
                     await _blogPostService.AddVideoContentChunkAsync(theChunk);
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Edit", new { id = theChunk.BlogPostID });
                 }
             }
             catch (Exception e)
@@ -237,7 +241,7 @@ namespace zakjr.Controllers
                     e.Message,
                     e.InnerException.Message));
             }
-            return View(theChunk);
+            return View();
         }
 
         protected void InitViewBag()

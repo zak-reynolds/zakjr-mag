@@ -3,28 +3,31 @@
 
 @{
     Layout = "_AdminLayout";
-    ViewData["Title"] = "Blog Admin - Edit Post";
+    ViewData["Title"] = "Edit Post";
 }
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     <div class="row">
-        <div class="small-12 column"><h4>Editing Blog Post</h4></div>
+        <div class="small-12 column">
+            <a href="/admin" class="button">Back to post list</a>
+            <a href="/blog/index/@Model.ID" class="button" target="_blank">Preview post</a>
+        </div>
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.ID)
     </div>
     <div class="row">
-        <div class="small-12 medium-6 large-4 column">
+        <div class="small-12 column">
             @Html.LabelFor(model => model.Title)
             @Html.EditorFor(model => model.Title)
             @Html.ValidationMessageFor(model => model.Title)
         </div>
-        <div class="small-12 medium-6 large-4 column">
+        <div class="small-12 column">
             @Html.LabelFor(model => model.Subtitle)
             @Html.EditorFor(model => model.Subtitle)
             @Html.ValidationMessageFor(model => model.Subtitle)
         </div>
-        <div class="small-12 medium-6 large-4 column">
+        <div class="small-12 column">
             @Html.LabelFor(model => model.FeaturedImage)
             @Html.EditorFor(model => model.FeaturedImage)
             @Html.ValidationMessageFor(model => model.FeaturedImage)
@@ -36,62 +39,84 @@
 
     @if (Model.TextContentList != null)
     {
-        for (int i = 0; i < Model.TextContentList.Count; ++i)
-        {
-            <div id="ContentList_@(Model.TextContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+        <div class="blogpost-content-list">
+            @for (int i = 0; i < Model.TextContentList.Count; ++i)
+            {
+            <div id="ContentList_@(Model.TextContentList[i].ID)__Dragger" class="content-row dragger-row row callout" draggable="true">
                 <div class="dragger-handle column small-1 callout secondary text-center">
                     <i class="fa fa-arrows-v" aria-hidden="true"></i>
                 </div>
                 <div class="dragger-content column small-11">
-                    @Html.HiddenFor(model => model.TextContentList[i].Sequence)
-                    @Html.EditorFor(model => model.TextContentList[i].Content)
+                    @Html.HiddenFor(model => model.TextContentList[i].Sequence, new { @class = "input--sequence" })
+                    <textarea asp-for="TextContentList[i].Content"></textarea>
                 </div>
             </div>
-        }
-        for (int i = 0; i < Model.ImageContentList.Count; ++i)
-        {
-            <div id="ContentList_@(Model.ImageContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+            }
+            @for (int i = 0; i < Model.ImageContentList.Count; ++i)
+            {
+            <div id="ContentList_@(Model.ImageContentList[i].ID)__Dragger" class="content-row dragger-row row callout" draggable="true">
                 <div class="dragger-handle column small-1 callout secondary text-center">
                     <i class="fa fa-arrows-v" aria-hidden="true"></i>
                 </div>
                 <div class="dragger-content column small-11">
-                    @Html.HiddenFor(model => model.ImageContentList[i].Sequence)
+                    @Html.HiddenFor(model => model.ImageContentList[i].Sequence, new { @class = "input--sequence" })
+                    @Html.LabelFor(model => model.ImageContentList[i].ImageUrl)
                     @Html.EditorFor(model => model.ImageContentList[i].ImageUrl)
+                    @Html.LabelFor(model => model.ImageContentList[i].ImageAlt)
                     @Html.EditorFor(model => model.ImageContentList[i].ImageAlt)
+                    @Html.LabelFor(model => model.ImageContentList[i].ImageCaption)
                     @Html.EditorFor(model => model.ImageContentList[i].ImageCaption)
+                    @Html.LabelFor(model => model.ImageContentList[i].LoadingGradient)
                     @Html.EditorFor(model => model.ImageContentList[i].LoadingGradient)
                 </div>
             </div>
-        }
-        for (int i = 0; i < Model.CodeContentList.Count; ++i)
-        {
-            <div id="ContentList_@(Model.CodeContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+            }
+            @for (int i = 0; i < Model.CodeContentList.Count; ++i)
+            {
+            <div id="ContentList_@(Model.CodeContentList[i].ID)__Dragger" class="content-row dragger-row row callout" draggable="true">
                 <div class="dragger-handle column small-1 callout secondary text-center">
                     <i class="fa fa-arrows-v" aria-hidden="true"></i>
                 </div>
                 <div class="dragger-content column small-11">
-                    @Html.HiddenFor(model => model.CodeContentList[i].Sequence)
+                    @Html.HiddenFor(model => model.CodeContentList[i].Sequence, new { @class = "input--sequence" })
+                    @Html.LabelFor(model => model.CodeContentList[i].CodeLanguage)
                     @Html.EditorFor(model => model.CodeContentList[i].CodeLanguage)
-                    @Html.EditorFor(model => model.CodeContentList[i].Content)
+                    @Html.LabelFor(model => model.CodeContentList[i].Content)
+                    <textarea asp-for="CodeContentList[i].Content"></textarea>
                 </div>
             </div>
-        }
-        for (int i = 0; i < Model.VideoContentList.Count; ++i)
-        {
-            <div id="ContentList_@(Model.VideoContentList[i].ID)__Dragger" class="dragger-row row callout" draggable="true">
+            }
+            @for (int i = 0; i < Model.VideoContentList.Count; ++i)
+            {
+            <div id="ContentList_@(Model.VideoContentList[i].ID)__Dragger" class="content-row dragger-row row callout" draggable="true">
 
                 <div class="dragger-handle column small-1 callout secondary text-center">
                     <i class="fa fa-arrows-v" aria-hidden="true"></i>
                 </div>
                 <div class="dragger-content column small-11">
-                    @Html.HiddenFor(model => model.VideoContentList[i].Sequence)
+                    @Html.HiddenFor(model => model.VideoContentList[i].Sequence, new { @class = "input--sequence" })
+                    @Html.LabelFor(model => model.VideoContentList[i].VideoUrl)
                     @Html.EditorFor(model => model.VideoContentList[i].VideoUrl)
+                    @Html.LabelFor(model => model.VideoContentList[i].VideoIsWidescreen)
                     @Html.EditorFor(model => model.VideoContentList[i].VideoIsWidescreen)
                 </div>
             </div>
-        }
+            }
+        </div>
     }
-    <div class="row column">
+    <div class="row column" style="margin-top:1rem">
+        <a href="/Admin/AddTextContentChunk/@Model.ID" class="button">+ <i class="fa fa-font" aria-hidden="true"></i></a>
+        <a href="/Admin/AddImageContentChunk/@Model.ID" class="button">+ <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+        <a href="/Admin/AddVideoContentChunk/@Model.ID" class="button">+ <i class="fa fa-youtube" aria-hidden="true"></i></a>
+        <a href="/Admin/AddCodeContentChunk/@Model.ID" class="button">+ <i class="fa fa-code" aria-hidden="true"></i></a>
         <input type="submit" value="Save" class="button success" />
     </div>
+}
+@section scripts {
+    <script>
+        let contentRoot = document.querySelector('.blogpost-content-list');
+        let contentRows = Array.from(contentRoot.querySelectorAll(".content-row"));
+        contentRows.sort((a, b) => a.querySelector(".input--sequence").value > b.querySelector(".input--sequence").value);
+        contentRows.forEach(cr => contentRoot.appendChild(cr));
+    </script>
 }

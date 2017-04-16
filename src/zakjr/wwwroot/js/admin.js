@@ -13,8 +13,8 @@ function swapContentListData(a, b) {
 
 function setSequenceField() {
     let index = 0;
-    cols.forEach(function (col) {
-        col.querySelector("input[type='hidden']").value = index;
+    document.querySelectorAll('.dragger-row').forEach(function (col) {
+        col.querySelector(".input--sequence").value = index;
         index++;
     });
 }
